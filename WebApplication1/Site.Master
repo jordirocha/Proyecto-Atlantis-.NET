@@ -63,7 +63,21 @@
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <a class="nav-link" href="~/LogIn" runat="server"><button class="btn btn-primary" type="button">Acceder</button></a>
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Opciones
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Ver puntos</a></li>
+                                <li><a class="dropdown-item" href="#">Eventos inscritos</a></li>
+                                <li><a class="dropdown-item" href="#">Conciertos inscritos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                        <a class="nav-link" href="~/LogIn" runat="server">
+                            <button class="btn btn-primary" type="button">Acceder</button></a>
                     </form>
                 </div>
             </div>

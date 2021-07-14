@@ -20,7 +20,7 @@ namespace WebApplication1
             
             if (dalUser.IniciarSesion(TextBox1.Text, TextBox2.Text))
              {
-                Image1.Height = 400;
+                Response.Redirect("Default.aspx");
              }
         }
     }
