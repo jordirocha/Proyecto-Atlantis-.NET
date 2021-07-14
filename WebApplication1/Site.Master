@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Atlantis</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <link href="Estilos.Master.css" rel="stylesheet" type="text/css" />
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navprincipal" runat="server">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="~/">
+                    <a runat="server" href="Default.aspx">
+                        <asp:Image ID="Image1" ImageUrl="~/Icons/logofinal.png" runat="server" />
+                    </a>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Actividades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.aspx">Contacto</a>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-primary" type="button">Acceder</button>
+                    
+                </div>
+            </div>
+        </nav>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />           
+            
+
+
+        <!-- Footer -->
+        <footer class="text-center text-black" >
+        <!-- Grid container -->
+            <div class="container p-4">
+                
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+        eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+          <ul class="list-unstyled mb-0" style="text-align:left;">
+            <li>
+              <a href="#!" class="text-black">Actividades</a>
+            </li>
+            <li>
+              <a href="#!" class="text-black">Eventos</a>
+            </li>
+            <li>
+              <a href="#!" class="text-black">Nosotros</a>
+            </li>
+            <li>
+              <a href="#!" class="text-black">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        
+
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-9 mb-7 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-black">Política de Privacidad </a>|
+              <a href="#!" class="text-black"> Política de Cookies </a>|
+              <a href="#!" class="text-black"> Condiciones de Uso</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <!-- Section: Social media -->
+                <section class="mb-4">
+
+                  <!-- Twitter -->
+                  
+                  <a class="btn btn-outline-dark" href="https://www.twitter.com" role="button">
+                      <asp:Image class="btn-redsocial" ImageUrl="~/Icons/twitter.png" runat="server"/></a>
+
+                  <!-- Google -->
+                  <a class="btn btn-outline-dark" href="Icons/google.png" role="button"
+                    ><asp:Image class="btn-redsocial" ImageUrl="~/Icons/google.png" runat="server"/></a>
+
+                  <!-- Instagram -->
+                  <a class="btn btn-outline-dark" href="Icons/instagram.png" role="button"
+                    ><asp:Image class="btn-redsocial" ImageUrl="~/Icons/instagram.png" runat="server"/></a>
+
+                  <!-- Github -->
+                  <a class="w3-btn-floating w3-teal" href="Icons/github.png" role="button">
+                      <asp:Image class="btn-redsocial" ImageUrl="~/Icons/github.png" runat="server"/></a>
+          
+                    
+
+                 </section>
+
+    <!-- Section: Social media -->
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <p>&copy; <%: DateTime.Now.Year %> - ATLANTIS </p>
+  </div>
+</footer>
+
+        </div>
+
+    </form>
+</body>
+</html>
