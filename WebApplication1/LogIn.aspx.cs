@@ -17,11 +17,17 @@ namespace WebApplication1
         protected void ButIniciarSesion(object sender, EventArgs e)
         {
             DALUsuario dalUser = new DALUsuario();
-            
+
             if (dalUser.IniciarSesion(TextBox1.Text, TextBox2.Text))
-             {
+            {
+                Usuario user = dalUser.VerificarUsuario(TextBox1.Text);
+                Session["nombre"] = user.Nombre;
                 Response.Redirect("Default.aspx");
-             }
+            }
+            else
+            {
+                TxtLogInFailed.Text = "Datos incorrectos, inténtalo de nuevo";
+            }
         }
     }
 }
