@@ -1,31 +1,66 @@
-﻿#Image1 {
-    height: 100px;
-    position: relative;
-    margin-top: -20px;
-    margin-bottom: -20px;
+﻿
 
+
+
+
+
+
+/* SLIDER  */
+@keyframes slidy {
+    0% {
+        left: 0%;
+    }
+
+    20% {
+        left: 0%;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -400%;
+    }
 }
 
-#navprincipal {
-    background-color: #E4F1F6;
+div#slider {
+    overflow: hidden;
 }
 
-#navbarSupportedContent {
-    padding-left: 25%;
+    div#slider figure img {
+        width: 20%;
+        float: left;
+    }
 
-}
+    div#slider figure {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        text-align: left;
+        font-size: 0;
+        animation: 30s slidy infinite;
+    }
 
-body {
-}
-
-.btn.btn-outline-dark {
-    border-radius: 100%;
-}
-
-.btn-redsocial {
-    width: 25px;
-    height: 25px;
-    padding: 6px 0px;
-    border-radius: 15px;
-
-}
+/* FIN SLIDER */

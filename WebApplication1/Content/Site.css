@@ -1,21 +1,21 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 75px;
-    padding-bottom: 20px;
+    
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 50%;
-    padding-right: 50%;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
 }
 
 
@@ -28,4 +28,149 @@ textarea {
     .body-content {
         padding: 0;
     }
+}
+
+@media only screen and (min-width : 1200px) {
+
+    .container {
+        width: 1500px;
+    }
+}
+/* CSS PERSONAL */
+
+
+.fixed-top {
+    position: absolute !important;
+}
+
+#Image1 {
+    height: 100px;
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+#navprincipal {
+    background-color: #E4F1F6;
+}
+
+#navbarSupportedContent {
+    padding-left: 20%;
+}
+
+li.nav-item {
+    padding-right: 10%;
+}
+
+.btn.btn-outline-dark {
+    border-radius: 100%;
+}
+
+
+
+body {
+    background-color: white;
+}
+
+/* FOOTER */
+
+/* Wave */
+.wave {
+    height: 100%; 
+    width: 100%;
+    bottom: 0;
+}
+
+
+footer {
+    background-color: #EEEEEE;
+    align-content: center;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    margin: 0;
+    
+}
+
+.container.p-4 {
+    left: 0;
+    right: 0;
+}
+
+.listnav {
+    margin-top: 0;
+    text-align: left;
+    display: block;
+    list-style: none;
+}
+
+    .listnav li {
+        padding-bottom: 3px;
+    }
+
+.listafooter {
+    text-decoration: none;
+    color: black;
+}
+
+    .listafooter:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+.list-politics {
+    padding-top: 5%;
+    list-style: none;
+}
+
+.politics {
+    text-decoration: none;
+    color: dimgray;
+    padding-bottom: 10px;
+}
+
+.p-3 {
+    font-weight: bold;
+    text-align: right;
+}
+/* REDES SOCIALES - FOOTER */
+
+.field {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.sns-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    transition-duration: .5s;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    background-color: black;
+}
+
+
+    .sns-btn:hover {
+        transform: scale(1.2);
+        box-shadow: none;
+    }
+
+.sns-btn__icon {
+    width: 25px;
+}
+
+
+.usnames {
+    text-align: right;
+    color: dimgray;
+    font-family: Calibri;
+    font-size: 13px;
 }
