@@ -9,7 +9,7 @@
                     
                     <img src="Imagenes/slider1.jpg" alt>
                     <img src="Imagenes/slider2.jpg" alt>
-                    <img src="Imagenes/slider3.jpg" alt>
+                    
                 
                 </figure>
                 </div>

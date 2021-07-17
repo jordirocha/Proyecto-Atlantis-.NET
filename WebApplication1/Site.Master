@@ -87,15 +87,28 @@
 
             </asp:ContentPlaceHolder>
             <hr />     
-                    
+     <!-- WAVE -->
+     <div class="header">
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+
+            </defs>
+            <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+            </svg>
+       </div>
+    </div>
     <!-- Footer -->
          
     <div>
     <footer>
-        <svg viewBox="0 -80 700 110" width="100%" height="100" preserveAspectRatio="none">
-    <path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill="#CEB964" />
-    <path d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z" fill="#EEEEEE" />
-    </svg>
         <!-- Grid container -->
         <div class="p-4">     
     
@@ -158,7 +171,7 @@
                           <asp:Image class="sns-btn__icon fab fa-github" ImageUrl="~/Icons/github.png" runat="server"/></a>
                     </section>   
                     <div class="p-3">
-                        <p>&copy; <%: DateTime.Now.Year %> - ATLANTIS </p>
+                        <p class="copyright">&copy; <%: DateTime.Now.Year %> - ATLANTIS </p>
                         <br />
                         
                     </div>

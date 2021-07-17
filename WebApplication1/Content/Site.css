@@ -1,6 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 75px;
+    padding-top: 50px;
     
 }
 
@@ -9,6 +9,7 @@ body {
 .body-content {
     padding-left: 0;
     padding-right: 0;
+    
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -33,7 +34,7 @@ textarea {
 @media only screen and (min-width : 1200px) {
 
     .container {
-        width: 1500px;
+        width: 100%;
     }
 }
 /* CSS PERSONAL */
@@ -51,7 +52,7 @@ textarea {
 }
 
 #navprincipal {
-    background-color: #E4F1F6;
+    background-color: white;
 }
 
 #navbarSupportedContent {
@@ -62,28 +63,77 @@ li.nav-item {
     padding-right: 10%;
 }
 
+
 .btn.btn-outline-dark {
     border-radius: 100%;
 }
 
-
-
-body {
-    background-color: white;
+/* Wave */
+.header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(31,80,170,1) 0%, rgba(125,183,226,1) 51%, rgba(165,240,255,1) 100%);
+    width: 100%;
 }
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+}
+
+#gentle-wave {
+    width: 100%;
+}
+
+/* Animacion WAVE */
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+    .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+
+    .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+
+    100% {
+        transform: translate3d(85px,0,0);
+    }
+}
+/*Responsive para movil de WAVE*/
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
+/* FIN DE WAVE */
 
 /* FOOTER */
-
-/* Wave */
-.wave {
-    height: 100%; 
-    width: 100%;
-    bottom: 0;
-}
-
-
 footer {
-    background-color: #EEEEEE;
+    background-color: white;
     align-content: center;
     left: 0;
     width: 100%;
@@ -134,10 +184,14 @@ footer {
     font-weight: bold;
     text-align: right;
 }
+
+.copyright {
+    text-align:center;
+}
 /* REDES SOCIALES - FOOTER */
 
 .field {
-    display: flex;
+    display: inline-flex;
     width: 300px;
     justify-content: space-around;
     align-items: end;
