@@ -46,7 +46,7 @@
                 window.scrollTo({ top: 0 });
             }
         </script>
-        <link href="Estilos.Master.css" rel="stylesheet" type="text/css" />
+        
         
         <!-- Aquí empieza el código del NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navprincipal" runat="server">
@@ -86,7 +86,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
             </asp:ContentPlaceHolder>
-            <hr />     
+            
      <!-- WAVE -->
      <div class="header">
 
