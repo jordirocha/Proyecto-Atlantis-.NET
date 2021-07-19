@@ -40,10 +40,13 @@
                 
             </Scripts>
         </asp:ScriptManager>
-        <!-- Script para el scroll desde abajo (Inicio) -->
+        <!-- Script para el scroll desde abajo (Inicio) \\ SE HA DE CAMBIAR PARA SERVIDOR -->
         <script>
-            function ScrollArriba () {
-                window.scrollTo({ top: 0 });
+            function ScrollArriba() {
+                if (window.location == "https://localhost:44380/Default" || window.location == "https://localhost:44380")
+                    window.scrollTo({ top: 0 });
+                else
+                    window.location.href = "Default";
             }
         </script>
         
@@ -78,11 +81,10 @@
                         </li>
                     </ul>
                     
-                    <button class="btn btn-primary" type="button">Acceder</button>   
+                    <a href="~/LogIn.aspx" runat="server"><button class="botonacceso" type="button">Acceder</button></a>
                 </div>
             </div>
         </nav>
-        <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
             </asp:ContentPlaceHolder>
