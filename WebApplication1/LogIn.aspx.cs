@@ -13,7 +13,6 @@ namespace WebApplication1
         {
 
         }
-
         protected void ButIniciarSesion(object sender, EventArgs e)
         {
             DALUsuario dalUser = new DALUsuario();
