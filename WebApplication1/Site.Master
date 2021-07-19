@@ -80,21 +80,16 @@
                     
                    <% if (Session["nombre"] != null)
                         { %>
+                    <p>Hola</p>
                     <form class="d-flex">
                         <li class="nav-item dropdown" style="list-style: none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Opciones
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi perfil
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Ver puntos</a></li>
                                 <li><a class="dropdown-item" href="#">Eventos inscritos</a></li>
-                                <li><a class="dropdown-item" href="#">Conciertos inscritos</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                                <li><a class="dropdown-item" href="#">Actividades inscritos</a></li>
                             </ul>
                         </li>
-
                     </form>
                     <% } %>
 
@@ -107,7 +102,7 @@
                         else
                         { %>
                     <a class="nav-link" href="~/LogIn" runat="server">
-                        <button class="btn btn-danger" type="button">Cerrar Sesión</button>
+                        <button class="btn btn-danger" type="button">Salir</button>
                     </a>
                     <%} %>
 

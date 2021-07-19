@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+﻿using System.Data.SqlClient;
 
 namespace WebApplication1
 {
-    public class DbConnection
+    internal class DbConnection
     {
         SqlConnection conexion = null;
 

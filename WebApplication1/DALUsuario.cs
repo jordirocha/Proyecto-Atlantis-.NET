@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.SqlClient;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace WebApplication1
 {
-    public class DALUsuario
+    internal class DALUsuario
     {
         DbConnection conn = null;
         public DALUsuario()
@@ -42,7 +39,7 @@ namespace WebApplication1
             {
                 string sqlLogIn = @"SELECT * from USUARIO
             WHERE email = @pEmail";
-               
+
                 SqlCommand cmd = new SqlCommand(sqlLogIn, conn.Conexion);
                 SqlParameter pEmail = new SqlParameter("@pEmail", email);
                 cmd.Parameters.Add(pEmail);
@@ -64,6 +61,5 @@ namespace WebApplication1
 
             return user;
         }
-
     }
 }
