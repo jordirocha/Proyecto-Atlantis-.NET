@@ -1,0 +1,18 @@
+﻿
+.container.contacto {
+    margin-top: 5%;
+}
+
+h3 {
+    margin-bottom: 5%;
+}
+
+.col-md-6.izq {
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.infocontacto {
+    margin-top: 2%;
+    text-decoration: none;
+    color: black;
+}

@@ -15,7 +15,7 @@
                 </div>
               </div>
               <div class="image">
-                <img src="Imagenes/slider6.jpg">
+                <img src="Imagenes/slider1.jpg">
               </div>
             </div>
             <div class="slider">
@@ -26,7 +26,7 @@
                 </div>
               </div>
               <div class="image">
-                <img src="Imagenes/slider8.jpg">
+                <img src="Imagenes/slider2.jpg">
               </div>
             </div>
             <div class="slider">
@@ -37,7 +37,7 @@
                 </div>
               </div>
               <div class="image">
-                <img src="Imagenes/slider7.jpg">
+                <img src="Imagenes/slider3.jpg">
               </div>
             </div>
             <div class="slider">
@@ -54,24 +54,27 @@
           </div>
         </div>
     </div>
-    <div class="container overflow-hidden">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h2>Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+            <div class="col-md-6">
+                <p class="logobienvenidap">
+                    <asp:Image class="logobienvenida" ImageUrl="~/Icons/logofinal.png" runat="server" />
                 </p>
             </div>
-            <div class="col-md-4">
-                <h2>Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
+            <div class="col-md-6">
+                <h2 class="bienvenida">¡Bienvenidos a Atlantis!</h2>
+                <p class="txtbienvenida">
+                    Nuestros océanos son enormes, cubren casi las tres cuartas partes de nuestro planeta. 
+                    Pero hoy en día hay miles de partículas de desechos de plásticos en cada kilómetro cuadrado de mar. 
+                    Estamos destruyendo el legado de las futuras generaciones. Los recursos naturales de la tierra 
+                    son parte de su futuro. Impulsados ​​por la idea de que todo el mundo es parte del problema y 
+                    de la solución, queremos aportar nuestro granito de arena. Por esta razón, convertimos nuestro 
+                    amor por las playas, los océanos y la música, en la puesta en marcha de nuestro proyecto.
+                    Un proyecto en el que cualquier persona es bienvenida, y además, si te gusta vivir la música en directo, 
+                    ayudando en esta lucha contra la destrucción de nuestros océanos, obtendrás entradas totalmente gratuitas.
                 </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <p class="leermas">
+                    <a class="nosotros btn btn-default" href="About.aspx">Más sobre nosotros &raquo;</a>
                 </p>
             </div>
         </div>
