@@ -21,7 +21,7 @@
         <asp:Label ID="TxtLogInFailed" class="text-danger" Style="text-align: start !important" runat="server" Text=""></asp:Label>
         <div class="checkbox mb-3" style="text-align: start !important">
             <label>
-                <asp:CheckBox ID="CheckCookies" runat="server" value="remember-me" />
+                <asp:CheckBox ID="CheckCookies" runat="server" value="remember-me" OnCheckedChanged="CheckRecordar" />
                 Recordarme 
             </label>
         </div>

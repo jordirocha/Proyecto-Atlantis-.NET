@@ -41,7 +41,8 @@ namespace WebApplication1
             WHERE email = @pEmail";
 
                 SqlCommand cmd = new SqlCommand(sqlLogIn, conn.Conexion);
-                SqlParameter pEmail = new SqlParameter("@pEmail", email);
+                SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.VarChar, 50);
+                pEmail.Value = email;
                 cmd.Parameters.Add(pEmail);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
