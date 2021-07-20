@@ -17,10 +17,11 @@ namespace WebApplication1
         {
             DALUsuario dalUser = new DALUsuario();
 
-            if (dalUser.IniciarSesion(TextBox1.Text, TextBox2.Text))
+            if (dalUser.IniciarSesion(TextEmail.Text, TextPass.Text))
             {
-                Usuario user = dalUser.VerificarUsuario(TextBox1.Text);
+                Usuario user = dalUser.VerificarUsuario(TextEmail.Text);
                 Session["nombre"] = user.Nombre;
+                Session["rol"] = user.TipoPermiso;
                 Response.Redirect("Default.aspx");
             }
             else

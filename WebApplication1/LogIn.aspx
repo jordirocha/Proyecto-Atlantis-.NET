@@ -16,12 +16,12 @@
         <a href="~/" runat="server">
             <asp:Image ID="Image1" ImageUrl="~/Icons/logofinal.png" Height="170" runat="server" /></a>
         <h1 class="h3 mb-3 font-weight-normal">Saludos, inicia sesión</h1>
-        <asp:TextBox ID="TextBox1" type="email" class="form-control" placeholder="Correo" required="" autofocus="" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" type="password" class="form-control" placeholder="Contraseña" required="" runat="server"></asp:TextBox>
-        <asp:Label ID="TxtLogInFailed" class="text-danger" style="text-align: start !important" runat="server" Text=""></asp:Label>
+        <asp:TextBox ID="TextEmail" type="email" class="form-control" placeholder="Correo" required="" autofocus="" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextPass" type="password" class="form-control" placeholder="Contraseña" required="" runat="server"></asp:TextBox>
+        <asp:Label ID="TxtLogInFailed" class="text-danger" Style="text-align: start !important" runat="server" Text=""></asp:Label>
         <div class="checkbox mb-3" style="text-align: start !important">
             <label>
-                <input type="checkbox" value="remember-me" />
+                <asp:CheckBox ID="CheckCookies" runat="server" value="remember-me" />
                 Recordarme 
             </label>
         </div>

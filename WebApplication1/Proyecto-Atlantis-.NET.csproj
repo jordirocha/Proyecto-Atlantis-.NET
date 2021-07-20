@@ -130,7 +130,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Icons\logo.png" />
+    <Content Include="Icons\logofinal.png" />
     <Content Include="LogIn.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

@@ -13,5 +13,10 @@ namespace WebApplication1
         {
 
         }
+        protected void ButCerrarSesion(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("Default.aspx");
+        }
     }
 }

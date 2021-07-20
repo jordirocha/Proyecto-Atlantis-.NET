@@ -37,17 +37,16 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
-                
             </Scripts>
         </asp:ScriptManager>
         <!-- Script para el scroll desde abajo (Inicio) -->
         <script>
-            function ScrollArriba () {
+            function ScrollArriba() {
                 window.scrollTo({ top: 0 });
             }
         </script>
-        
-        
+
+
         <!-- Aquí empieza el código del NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navprincipal" runat="server">
             <div class="container">
@@ -77,21 +76,41 @@
                             <a class="nav-link" href="Contact.aspx">Contacto</a>
                         </li>
                     </ul>
-                    
-                   <% if (Session["nombre"] != null)
+
+                    <% if (Session["nombre"] != null)
                         { %>
-                    <p>Hola</p>
+                    <%if (Session["rol"].ToString() == "user")
+                        {%>
+                    <li style="list-style: none">Puntos: </li>
+                    <% } %>
                     <form class="d-flex">
                         <li class="nav-item dropdown" style="list-style: none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi perfil
                             </a>
+                            <% if (Session["rol"].ToString() == "user")
+                                { %>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Eventos inscritos</a></li>
                                 <li><a class="dropdown-item" href="#">Actividades inscritos</a></li>
                             </ul>
+                            <%   }
+                                else if (Session["rol"].ToString() == "admin")
+                                {%>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Administrar eventos</a></li>
+                            </ul>
+                            <%}
+                                else if (Session["rol"].ToString() == "ong")
+                                { %>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Administrar actividades</a></li>
+
+                            </ul>
+                            <%} %>
                         </li>
                     </form>
-                    <% } %>
+                    <% }  %>
 
                     <% if (Session["nombre"] == null)
                         { %>
@@ -101,123 +120,119 @@
                     <%}
                         else
                         { %>
-                    <a class="nav-link" href="~/LogIn" runat="server">
-                        <button class="btn btn-danger" type="button">Salir</button>
-                    </a>
+                    <asp:Button ID="ButSalir" class="btn btn-danger" runat="server" Text="Salir" OnClick="ButCerrarSesion" />
                     <%} %>
-
                 </div>
             </div>
         </nav>
         <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-
             </asp:ContentPlaceHolder>
-            
-     <!-- WAVE -->
-     <div class="header">
 
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            <!-- WAVE -->
+            <div class="header">
 
-            </defs>
-            <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-            </svg>
-       </div>
-    </div>
-    <!-- Footer -->
-         
-    <div>
-    <footer>
-        <!-- Grid container -->
-        <div class="p-4">     
-    
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-              
-            <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
+                <div>
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
 
-              <ul class="listnav">
-                <li>
-                  <a class="listafooter" onclick="ScrollArriba()">Inicio</a>
-                </li>
-                <li>
-                  <a href="#!" class="listafooter">Actividades</a>
-                </li>
-                <li>
-                  <a href="#!" class="listafooter">Eventos</a>
-                </li>
-                <li>
-                  <a href="About.aspx" class="listafooter">Nosotros</a>
-                </li>
-                <li>
-                  <a href="Contact.aspx" class="listafooter">Contacto</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
-              <ul class="list-politics">
-                <li>
-                  <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" target="_blank" class="politics">Política de Privacidad </a>|
-                  <a href="http://www.interior.gob.es/politica-de-cookies" target="_blank" class="politics"> Política de Cookies </a>|
-                  <a href="https://espana.edp.com/es/terminos-y-condiciones-de-uso-y-politica-de-privacidad-0" target="_blank"" class="politics"> Condiciones de Uso</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div id="redesociales" class="col-lg-4 col-md-4 mb-4 mb-md-0">
-                <!-- Section: Social media -->
-                    <section class="field">
-                      <!-- Twitter -->
-                      <a class="sns-btn sns-btn--twitter" href="https://www.twitter.com" role="button">
-                          <asp:Image class="sns-btn__icon fab fa-twitter" ImageUrl="~/Icons/twitter.png" runat="server"/></a>
-
-                      <!-- Google -->
-                      <a class="sns-btn sns-btn--google" href="Icons/google.png" role="button"
-                        ><asp:Image class="sns-btn__icon fab fa-google" ImageUrl="~/Icons/google.png" runat="server"/></a>
-
-                      <!-- Instagram -->
-                      <a class="sns-btn sns-btn--instagram" href="Icons/instagram.png" role="button"
-                        ><asp:Image class="sns-btn__icon fab fa-instagram" ImageUrl="~/Icons/instagram.png" runat="server"/></a>
-
-                      <!-- Github -->
-                      <a class="sns-btn sns-btn--github" href="Icons/github.png" role="button">
-                          <asp:Image class="sns-btn__icon fab fa-github" ImageUrl="~/Icons/github.png" runat="server"/></a>
-                    </section>   
-                    <div class="p-3">
-                        <p class="copyright">&copy; <%: DateTime.Now.Year %> - ATLANTIS </p>
-                        <br />
-                        
-                    </div>
-
-                <!-- Section: Social media -->
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                        </g>
+                    </svg>
                 </div>
-              <div>
-                  <p class="usnames"> Desarrollado por: Daniel Vela | Jordi Rocha | Eugenio Cano | Eudald Lladó </p>
-              </div>
-            <!--Grid column-->
+            </div>
+            <!-- Footer -->
+
+            <div>
+                <footer>
+                    <!-- Grid container -->
+                    <div class="p-4">
+
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+
+                            <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
+
+                                <ul class="listnav">
+                                    <li>
+                                        <a class="listafooter" onclick="ScrollArriba()">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="listafooter">Actividades</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="listafooter">Eventos</a>
+                                    </li>
+                                    <li>
+                                        <a href="About.aspx" class="listafooter">Nosotros</a>
+                                    </li>
+                                    <li>
+                                        <a href="Contact.aspx" class="listafooter">Contacto</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
+                                <ul class="list-politics">
+                                    <li>
+                                        <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" target="_blank" class="politics">Política de Privacidad </a>|
+                  <a href="http://www.interior.gob.es/politica-de-cookies" target="_blank" class="politics">Política de Cookies </a>|
+                  <a href="https://espana.edp.com/es/terminos-y-condiciones-de-uso-y-politica-de-privacidad-0" target="_blank" class="politics">Condiciones de Uso</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div id="redesociales" class="col-lg-4 col-md-4 mb-4 mb-md-0">
+                                <!-- Section: Social media -->
+                                <section class="field">
+                                    <!-- Twitter -->
+                                    <a class="sns-btn sns-btn--twitter" href="https://www.twitter.com" role="button">
+                                        <asp:Image class="sns-btn__icon fab fa-twitter" ImageUrl="~/Icons/twitter.png" runat="server" /></a>
+
+                                    <!-- Google -->
+                                    <a class="sns-btn sns-btn--google" href="Icons/google.png" role="button">
+                                        <asp:Image class="sns-btn__icon fab fa-google" ImageUrl="~/Icons/google.png" runat="server" /></a>
+
+                                    <!-- Instagram -->
+                                    <a class="sns-btn sns-btn--instagram" href="Icons/instagram.png" role="button">
+                                        <asp:Image class="sns-btn__icon fab fa-instagram" ImageUrl="~/Icons/instagram.png" runat="server" /></a>
+
+                                    <!-- Github -->
+                                    <a class="sns-btn sns-btn--github" href="Icons/github.png" role="button">
+                                        <asp:Image class="sns-btn__icon fab fa-github" ImageUrl="~/Icons/github.png" runat="server" /></a>
+                                </section>
+                                <div class="p-3">
+                                    <p class="copyright">&copy; <%: DateTime.Now.Year %> - ATLANTIS </p>
+                                    <br />
+
+                                </div>
+
+                                <!-- Section: Social media -->
+                            </div>
+                            <div>
+                                <p class="usnames">Desarrollado por: Daniel Vela | Jordi Rocha | Eugenio Cano | Eudald Lladó </p>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </div>
+                    <!-- Grid container -->
+
+                </footer>
+            </div>
         </div>
-        <!--Grid row-->
-    </div>
-    <!-- Grid container -->
 
-    </footer>
-    </div>
-</div>
-
-</form>
+    </form>
 </body>
 </html>
