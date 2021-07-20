@@ -23,10 +23,6 @@ body {
 }
 
 
-#Image1 {
-   
-}
-
 .form-signin {
     width: 100%;
     max-width: 360px;
@@ -61,3 +57,15 @@ body {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
+
+
+.btn.btn-lg.btn-primary.btn-block {
+    background-color: #005e63;
+    border: 1px solid #347376;
+}
+
+.fraseregistro a {
+    text-shadow: 2px #000000;
+    text-decoration: none;
+    color: #c10505;
+}

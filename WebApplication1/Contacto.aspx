@@ -22,8 +22,18 @@
             </div>
             <div class="col-md-6 der">
                 <h3 class="contactanos">CONTÁCTANOS</h3>
-
+                <asp:TextBox ID="TextEmail" class="form-control" type="email" placeholder="E-mail" required="" autofocus="" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextAsunto" class="form-control" type="text" placeholder="Asunto" required="" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextMensaje" class="form-control" TextMode="multiline" placeholder="Mensaje" Columns="50" Rows="8" required="" runat="server" />
+                <asp:Button ID="ButContacto" class="form-control btn btn-lg btn-primary btn-block float-right" runat="server" Text="Enviar" />
             </div>
+        </div>
+        <div class="row">
+                <p class="recibiremail"> ¡Si quieres recibir lo último en actividades y eventos, déjanos tu email aquí!</p>
+                <div class="recibiremails">   
+                    <asp:TextBox ID="TextEmail2" class="TextEmail2 form-control" type="email" placeholder="E-mail" runat="server"></asp:TextBox>
+                    <asp:Button ID="ButSuscripcion" class="btn btn-lg btn-primary" runat="server" Text="Suscribirse" />
+                </div>
         </div>
     </div>
 </asp:Content>

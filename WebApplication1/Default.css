@@ -7,7 +7,7 @@
 /* Slider */
 #slider {
     width: 100%;
-    height: auto;
+    height: 650px;
     position: relative;
     overflow: hidden;
 }
