@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                     
-                    <a href="~/LogIn.aspx" runat="server"><button class="botonacceso" type="button">Acceder</button></a>
+                    <a href="LogIn.aspx" runat="server"><button class="botonacceso" type="button">Acceder</button></a>
                 </div>
             </div>
         </nav>
