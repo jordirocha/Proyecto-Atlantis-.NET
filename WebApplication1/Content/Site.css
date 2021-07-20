@@ -1,6 +1,5 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 50px;
     background: linear-gradient(90deg, rgba(31,80,170,1) 0%, rgba(125,183,226,1) 51%, rgba(165,240,255,1) 100%);
 }
 
@@ -29,7 +28,6 @@ textarea {
 
     .body-content {
         padding: 0;
-        
     }
 }
 
