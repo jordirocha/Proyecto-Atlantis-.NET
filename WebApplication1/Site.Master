@@ -52,7 +52,7 @@
         
         
         <!-- Aquí empieza el código del NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navprincipal" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light" id="navprincipal" runat="server">
             <div class="container">
                 <a class="navbar-brand" href="~/">
                     <a runat="server" href="Default.aspx">
@@ -74,10 +74,10 @@
                             <a class="nav-link" href="#">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="About.aspx">Nosotros</a>
+                            <a class="nav-link" href="Nosotros.aspx">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contact.aspx">Contacto</a>
+                            <a class="nav-link" href="Contacto.aspx">Contacto</a>
                         </li>
                     </ul>
                     

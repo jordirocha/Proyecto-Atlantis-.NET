@@ -54,7 +54,7 @@
           </div>
         </div>
     </div>
-    <div class="container overflow-hidden">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <p class="logobienvenidap">
@@ -74,7 +74,7 @@
                     ayudando en esta lucha contra la destrucción de nuestros océanos, obtendrás entradas totalmente gratuitas.
                 </p>
                 <p class="leermas">
-                    <a class="nosotros btn btn-default" href="~/About.aspx">Más sobre nosotros &raquo;</a>
+                    <a class="nosotros btn btn-default" href="About.aspx">Más sobre nosotros &raquo;</a>
                 </p>
             </div>
         </div>
