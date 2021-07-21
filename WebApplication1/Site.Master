@@ -70,10 +70,10 @@
                             <a class="nav-link" href="#">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="About.aspx">Nosotros</a>
+                            <a class="nav-link" href="Nosotros.aspx">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contact.aspx">Contacto</a>
+                            <a class="nav-link" href="Contacto.aspx">Contacto</a>
                         </li>
                     </ul>
 
