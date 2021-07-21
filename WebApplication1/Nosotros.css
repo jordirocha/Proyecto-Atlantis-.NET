@@ -1,0 +1,140 @@
+﻿div.row {
+    margin-top: 5%;
+    
+}
+
+
+div.card {
+    display: flex;
+    background-color: transparent;
+    border: 1px solid #043942;
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.card-header {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: underline;
+    font-family: 'Century Gothic';
+}
+
+.card-text {
+    text-align: justify;
+    padding: 15px;
+
+}
+
+.datos.col-sm-3 {
+    text-align: center;
+}
+
+.card.ue {
+    background-color: transparent;
+    border: 0px;
+}
+
+.card-header.ue {
+    background-color: transparent;
+    border: 0px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* ICONOS */
+img.datosimg {
+    width: 60px;
+}
+
+/* TESTIMONIOS */
+
+.testimonios {
+    width: auto;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+h1.testi {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+.testimonial-quote {
+    font-size: 14px;
+    padding: 20px;
+    background-color: rgba(255,255,255,.8);
+    border-radius: 5px;
+}
+
+    .testimonial-quote blockquote {
+        border: 0;
+        margin: 0;
+        padding: 10px;
+        background: none; 
+        font-family: Georgia, serif;
+        font-size: 1.5em;
+        font-style: italic;
+        margin: 0;
+        position: relative;
+        text-shadow: 0 1px #222222;
+        z-index: 600;
+    }
+
+        .testimonial-quote blockquote * {
+            box-sizing: border-box;
+        }
+
+        .testimonial-quote blockquote p {
+            color: #1b1b1b;
+            line-height: 1.4;
+        }
+
+    .testimonial-quote img {
+        border: 3px solid white;
+        
+        border-radius: 50%;
+        display: block;
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: 1em;
+        left: 25px;
+    }
+
+    .testimonial-quote cite {
+        color: #1b1b1b;
+        display: block;
+        font-size: .8em;
+    }
+
+        .testimonial-quote cite span {
+            color: #04848c;
+            font-size: 1em;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 1px black;
+        }
+
+.testimonial-quote {
+    position: relative;
+}
+
+    .testimonial-quote.right .quote-container {
+        padding-left: 0;
+        padding-right: 160px;
+    }
+
+    .testimonial-quote.right img {
+        left: auto;
+        right: 40px;
+    }
