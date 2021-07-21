@@ -11,61 +11,70 @@ namespace WebApplication1
 {
 
 
-    public partial class Contact
+    public partial class Registro
     {
 
         /// <summary>
-        /// Control TextEmail.
+        /// Control sm1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail;
+        protected global::System.Web.UI.ScriptManager sm1;
 
         /// <summary>
-        /// Control TextAsunto.
+        /// Control Image1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextAsunto;
+        protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// Control TextMensaje.
+        /// Control TextNombrereg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextMensaje;
+        protected global::System.Web.UI.WebControls.TextBox TextNombrereg;
 
         /// <summary>
-        /// Control ButContacto.
+        /// Control TextEmailreg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButContacto;
+        protected global::System.Web.UI.WebControls.TextBox TextEmailreg;
 
         /// <summary>
-        /// Control TextEmail2.
+        /// Control TextPassreg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail2;
+        protected global::System.Web.UI.WebControls.TextBox TextPassreg;
 
         /// <summary>
-        /// Control ButSuscripcion.
+        /// Control TextPass2reg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButSuscripcion;
+        protected global::System.Web.UI.WebControls.TextBox TextPass2reg;
+
+        /// <summary>
+        /// Control Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

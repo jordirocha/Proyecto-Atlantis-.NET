@@ -131,10 +131,10 @@
                   <a href="#!" class="listafooter">Eventos</a>
                 </li>
                 <li>
-                  <a href="About.aspx" class="listafooter">Nosotros</a>
+                  <a href="Nosotros.aspx" class="listafooter">Nosotros</a>
                 </li>
                 <li>
-                  <a href="Contact.aspx" class="listafooter">Contacto</a>
+                  <a href="Contacto.aspx" class="listafooter">Contacto</a>
                 </li>
               </ul>
             </div>
