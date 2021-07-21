@@ -85,7 +85,7 @@
                         { %>
                     <%if (Session["rol"].ToString() == "user")
                         {%>
-                    <li style="list-style: none">Puntos:  </li>
+                    <li id="puntos">Puntos:  </li>
                     <% } %>
                     <form class="d-flex">
                         <li class="nav-item dropdown" style="list-style: none">
@@ -124,7 +124,10 @@
                     <%}
                         else
                         { %>
-                    <asp:Button ID="ButSalir" class="btn btn-danger" runat="server" Text="Salir" OnClick="ButCerrarSesion" />
+                    <a class="nav-link" id="salir" runat="server">
+                        <asp:Button ID="ButSalir" class="btn btn-danger" runat="server" Text="Cerrar sesión" OnClick="ButCerrarSesion" />
+                    </a>
+                    
                     <%} %>
                 </div>
             </div>

@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Nosotros.css" />
     <Content Include="Scripts\Registro.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="Login.css" />
