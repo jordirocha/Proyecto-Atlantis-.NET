@@ -40,14 +40,20 @@ h3 {
     font-size: 18px;
 }
 
+#MainContent_ButSuscripcion {
+    height: 46px;
+}
+
+
 .recibiremail {
+    margin-top: 30px;
     text-align: center;
 }
 
 div.recibiremails {
-    width: 70%;
-    margin-left: 50%;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .TextEmail2.form-control {

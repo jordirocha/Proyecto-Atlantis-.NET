@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link href="login.css" rel="stylesheet" />
+    <link href="Login.css" rel="stylesheet" />
 </head>
 <body class="text-center">
     <form class="form-signin" runat="server">
@@ -27,7 +27,7 @@
         </div>
 
         <asp:Button ID="Button2" class="btn btn-lg btn-primary btn-block" Style="width: 100%" runat="server" Text="Iniciar sesión" OnClick="ButIniciarSesion" />
-        <p class="fraseregistro">¿Todavía no tienes cuenta? Regístrate <a href="#">aquí</a>. </p>
+        <p class="fraseregistro">¿Todavía no tienes cuenta? Regístrate <a href="Registro.aspx">aquí</a>. </p>
         <p class="mt-5 mb-3 text-muted">&copy; <%: DateTime.Now.Year %> - ATLANTIS</p>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
