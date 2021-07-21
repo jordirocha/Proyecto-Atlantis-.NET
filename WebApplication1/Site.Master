@@ -81,7 +81,7 @@
                         { %>
                     <%if (Session["rol"].ToString() == "user")
                         {%>
-                    <li style="list-style: none">Puntos: </li>
+                    <li style="list-style: none">Puntos:  </li>
                     <% } %>
                     <form class="d-flex">
                         <li class="nav-item dropdown" style="list-style: none">

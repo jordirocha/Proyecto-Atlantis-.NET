@@ -16,8 +16,12 @@ namespace WebApplication1
         protected void ButCerrarSesion(object sender, EventArgs e)
         {
             Session.RemoveAll();
-            Response.Cookies["email"].Expires = DateTime.Now.AddMinutes(-1);
-            Response.Cookies["password"].Expires = DateTime.Now.AddMinutes(-1);
+            if (Request.Cookies["userInfo"] != null)
+            {
+                HttpCookie cookie = new HttpCookie("userInfo");
+                cookie.Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies.Add(cookie);
+            }
             Response.Redirect("Default.aspx");
         }
     }

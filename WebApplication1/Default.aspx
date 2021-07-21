@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="image">
-                        <img src="Imagenes/slider6.jpg">
+                        <img src="Imagenes/slider6.jpg" class="img-fluid">
                     </div>
                 </div>
                 <div class="slider">
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="image">
-                        <img src="Imagenes/slider8.jpg">
+                        <img src="Imagenes/slider8.jpg" class="img-fluid">
                     </div>
                 </div>
                 <div class="slider">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="image">
-                        <img src="Imagenes/slider7.jpg">
+                        <img src="Imagenes/slider7.jpg" class="img-fluid">
                     </div>
                 </div>
                 <div class="slider">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="image">
-                        <img src="Imagenes/slider4.jpg">
+                        <img src="Imagenes/slider4.jpg" class="img-fluid">
                     </div>
                 </div>
             </div>

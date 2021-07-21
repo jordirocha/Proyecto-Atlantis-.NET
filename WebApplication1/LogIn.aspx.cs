@@ -11,10 +11,21 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Response.Cookies["correo"].Value != null && Response.Cookies["password"].Value != null)
+            /* if (Response.Cookies["correo"].Value != null && Response.Cookies["password"].Value != null)
+             {
+                 DALUsuario dalUser = new DALUsuario();
+                 Usuario user = dalUser.VerificarUsuario(Response.Cookies["correo"].Value);
+                 Session["nombre"] = user.Nombre;
+                 Session["rol"] = user.TipoPermiso;
+                 Response.Redirect("Default.aspx");
+             }*/
+            HttpCookie checkCookie = Request.Cookies["userInfo"];
+            if (checkCookie != null)
             {
+                /* TextEmail.Text = checkCookie["email"];
+                 TextPass.Text = checkCookie["pass"];*/
                 DALUsuario dalUser = new DALUsuario();
-                Usuario user = dalUser.VerificarUsuario(Response.Cookies["correo"].Value);
+                Usuario user = dalUser.VerificarUsuario(checkCookie["email"]);
                 Session["nombre"] = user.Nombre;
                 Session["rol"] = user.TipoPermiso;
                 Response.Redirect("Default.aspx");
@@ -32,17 +43,22 @@ namespace WebApplication1
                 Session["rol"] = user.TipoPermiso;
                 if (CheckCookies.Checked)
                 {
-                    HttpCookie cookie1 = new HttpCookie("correo", TextEmail.Text);
-                    cookie1.Expires = DateTime.Now.AddMinutes(1);
-                    Response.Cookies.Add(cookie1);
+                    /*  HttpCookie cookie1 = new HttpCookie("correo", TextEmail.Text);
+                      cookie1.Expires = DateTime.Now.AddMinutes(2);
+                      Response.Cookies.Add(cookie1);
 
-                    HttpCookie cookie2 = new HttpCookie("password", TextPass.Text);
-                    cookie2.Expires = DateTime.Now.AddMinutes(1);
-                    Response.Cookies.Add(cookie2);
-                    /* Response.Cookies["email"].Value = TextEmail.Text;
-                     Response.Cookies["password"].Value = TextPass.Text;
-                     Response.Cookies["email"].Expires = DateTime.Now.AddMinutes(1);
-                     Response.Cookies["password"].Expires = DateTime.Now.AddMinutes(1);*/
+                      HttpCookie cookie2 = new HttpCookie("password", TextPass.Text);
+                      cookie2.Expires = DateTime.Now.AddMinutes(2);
+                      Response.Cookies.Add(cookie2);
+                       Response.Cookies["email"].Value = TextEmail.Text;
+                       Response.Cookies["password"].Value = TextPass.Text;
+                       Response.Cookies["email"].Expires = DateTime.Now.AddMinutes(1);
+                       Response.Cookies["password"].Expires = DateTime.Now.AddMinutes(1);*/
+                    HttpCookie cookie = new HttpCookie("userInfo");
+                    cookie["email"] = TextEmail.Text;
+                    cookie["pass"] = TextPass.Text;
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie);
                 }
                 Response.Redirect("Default.aspx");
             }
