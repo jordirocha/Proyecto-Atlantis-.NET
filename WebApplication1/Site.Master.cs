@@ -13,5 +13,17 @@ namespace WebApplication1
         {
 
         }
+
+        protected void ButCerrarSesion(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            if (Request.Cookies["userInfo"] != null)
+            {
+                HttpCookie cookie = new HttpCookie("userInfo");
+                cookie.Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies.Add(cookie);
+            }
+            Response.Redirect("Default.aspx");
+        }
     }
 }

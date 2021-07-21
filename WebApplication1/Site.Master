@@ -52,7 +52,7 @@
         
         
         <!-- Aquí empieza el código del NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-light" id="navprincipal" runat="server">
+                <nav class="navbar navbar-expand-lg navbar-light" id="navprincipal" runat="server">
             <div class="container">
                 <a class="navbar-brand" href="~/">
                     <a runat="server" href="Default.aspx">
@@ -80,11 +80,59 @@
                             <a class="nav-link" href="Contacto.aspx">Contacto</a>
                         </li>
                     </ul>
-                    
-                    <a href="LogIn.aspx" runat="server"><button class="botonacceso" type="button">Acceder</button></a>
+
+                    <% if (Session["nombre"] != null)
+                        { %>
+                    <%if (Session["rol"].ToString() == "user")
+                        {%>
+                    <li style="list-style: none">Puntos:  </li>
+                    <% } %>
+                    <form class="d-flex">
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi perfil
+                            </a>
+                            <% if (Session["rol"].ToString() == "user")
+                                { %>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Eventos inscritos</a></li>
+                                <li><a class="dropdown-item" href="#">Actividades inscritos</a></li>
+                            </ul>
+                            <%   }
+                                else if (Session["rol"].ToString() == "admin")
+                                {%>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Administrar eventos</a></li>
+                            </ul>
+                            <%}
+                                else if (Session["rol"].ToString() == "ong")
+                                { %>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Administrar actividades</a></li>
+
+                            </ul>
+                            <%} %>
+                        </li>
+                    </form>
+                    <% }  %>
+
+                    <% if (Session["nombre"] == null)
+                        { %>
+                    <a class="nav-link" href="~/LogIn" runat="server">
+                        <button class="btn btn-primary botonacceso" type="button">Acceder</button>
+                    </a>
+                    <%}
+                        else
+                        { %>
+                    <asp:Button ID="ButSalir" class="btn btn-danger" runat="server" Text="Salir" OnClick="ButCerrarSesion" />
+                    <%} %>
                 </div>
             </div>
         </nav>
+
+
+        <!--<a href="LogIn.aspx" runat="server"><button class="botonacceso" type="button">Acceder</button></a>-->
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
             </asp:ContentPlaceHolder>

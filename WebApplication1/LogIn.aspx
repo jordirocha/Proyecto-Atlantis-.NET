@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Iniciar sesión" Language="C#" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="WebApplication1.LogIn" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,9 +27,9 @@
             </label>
         </div>
 
-        <asp:Button ID="Button2" class="btn btn-lg btn-primary btn-block" Style="width: 100%" runat="server" Text="Iniciar sesión" OnClick="ButIniciarSesion" />
+        <asp:Button ID="ButLogIn" class="btn btn-lg btn-primary btn-block" Style="width: 100%" runat="server" Text="Iniciar sesión" OnClick="ButIniciarSesion" />
         <p class="fraseregistro">¿Todavía no tienes cuenta? Regístrate <a href="Registro.aspx">aquí</a>. </p>
-        <p class="mt-5 mb-3 text-muted">&copy; <%: DateTime.Now.Year %> - ATLANTIS</p>
+        <p class="mt-5 mb-3 text-muted">&copy; <%: DateTime.Now.Year %>- ATLANTIS</p>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
