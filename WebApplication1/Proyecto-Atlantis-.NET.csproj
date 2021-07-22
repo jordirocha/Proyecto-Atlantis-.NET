@@ -296,7 +296,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="DbConnection.cs" />
-    <Compile Include="Evento.cs" />
+    <Compile Include="DALEvento.cs" />
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

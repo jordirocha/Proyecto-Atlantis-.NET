@@ -7,14 +7,13 @@ using System.Web;
 
 namespace WebApplication1
 {
-    public class Evento
+    public class DALEvento
     {
         DbConnection con = null;
 
-        public Evento()
+        public DALEvento()
         {
             con = new DbConnection();
-
         }
 
         public DataTable seleccionarEventos()
@@ -24,7 +23,7 @@ namespace WebApplication1
                 "fecha as Fecha," +
                 "puntosRequeridos as Puntos," +
                  "descripcion as Descripcion," +
-                "aforo as Limite from evento", con.Conexion);
+                "aforo as Aforo from evento", con.Conexion);
             DataTable table = new DataTable();
             da.Fill(table);
             return table;
