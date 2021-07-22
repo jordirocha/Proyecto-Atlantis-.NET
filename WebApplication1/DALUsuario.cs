@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WebApplication1
 {
@@ -12,21 +14,31 @@ namespace WebApplication1
         }
         public bool IniciarSesion(string email, string pass)
         {
-            string sqlLogIn = @"SELECT email, contraseña from USUARIO
-            WHERE email = @pEmail and contraseña = @pPasswd";
+            string contrasenya = "";
+            string sqlLogIn = @"SELECT * from USUARIO
+            WHERE email = @pEmail";
 
             SqlCommand cmd = new SqlCommand(sqlLogIn, conn.Conexion);
             SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.VarChar, 50);
             pEmail.Value = email;
-            SqlParameter pPass = new SqlParameter("@pPasswd", System.Data.SqlDbType.VarChar, 50);
-            pPass.Value = pass;
             cmd.Parameters.Add(pEmail);
-            cmd.Parameters.Add(pPass);
+            /* SqlParameter pPass = new SqlParameter("@pPasswd", System.Data.SqlDbType.VarChar, 50);
+             pPass.Value = pass;
+             cmd.Parameters.Add(pEmail);
+             cmd.Parameters.Add(pPass);*/
             SqlDataReader registro = cmd.ExecuteReader();
             if (registro.Read())
             {
+                while (registro.Read())
+                {
+                    contrasenya = (string)registro["nombre"];
+                }
                 registro.Close();
-                return true;
+                contrasenya = Descifrar(contrasenya);
+                if (contrasenya.CompareTo(pass) == 0)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -55,10 +67,38 @@ namespace WebApplication1
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("Error en select: " + ex.Message);
+                // MessageBox.Show("Error en select: " + ex.Message);
             }
 
             return user;
         }
+
+        public string Descifrar(string cadena)
+        {
+            byte[] claveEncriptacion;
+
+            // Arreglo donde guardaremos la cadena descovertida.
+            byte[] conCifrado = Convert.FromBase64String(cadena);
+
+            // Ciframos utilizando el Algoritmo MD5.
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            claveEncriptacion = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(cadena));
+            md5.Clear();
+
+            //Desciframos utilizando el Algoritmo 3DES.
+            TripleDESCryptoServiceProvider tripledes = new TripleDESCryptoServiceProvider();
+            tripledes.Key = claveEncriptacion;
+            tripledes.Mode = CipherMode.ECB;
+            tripledes.Padding = PaddingMode.PKCS7;
+            ICryptoTransform convertidor = tripledes.CreateDecryptor();
+
+            byte[] descifrado = convertidor.TransformFinalBlock(conCifrado, 0, conCifrado.Length);
+            tripledes.Clear();
+
+            string cadena_descifrada = UTF8Encoding.UTF8.GetString(descifrado);
+
+            return cadena_descifrada;
+        }
+
     }
 }

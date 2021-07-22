@@ -14,7 +14,6 @@ namespace WebApplication1
             HttpCookie checkCookie = Request.Cookies["userInfo"];
             if (checkCookie != null)
             {
-
                 DALUsuario dalUser = new DALUsuario();
                 Usuario user = dalUser.VerificarUsuario(checkCookie["email"]);
                 Session["nombre"] = user.Nombre;
