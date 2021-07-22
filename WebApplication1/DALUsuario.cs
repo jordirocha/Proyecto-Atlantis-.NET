@@ -12,8 +12,8 @@ namespace WebApplication1
         }
         public bool IniciarSesion(string email, string pass)
         {
-            string sqlLogIn = @"SELECT email, contraseña from USUARIO
-            WHERE email = @pEmail and contraseña = @pPasswd";
+            string sqlLogIn = @"SELECT email, contrasenya from USUARIO
+            WHERE email = @pEmail and contrasenya = @pPasswd";
 
             SqlCommand cmd = new SqlCommand(sqlLogIn, conn.Conexion);
             SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.VarChar, 50);

@@ -1,16 +1,41 @@
-﻿div.row {
+﻿div.container-fluid {
+    padding: 0;
+
+}
+
+
+div.row {
     margin-top: 5%;
+    margin-right: 0;
     
 }
 
 
-div.card {
+div.card.atlantis {
     display: flex;
-    background-color: transparent;
-    border: 1px solid #043942;
     width: 80%;
     margin-left: 10%;
+    border-radius: 31px;
+    box-shadow: 3px 3px 5px rgba(73,72,72,.61);
+    border: 1px solid rgba(255,255,255,.8);
+}
 
+.card-header.atlantis {
+    color: white;
+    background: rgb(38,38,38,.8);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.card-body.atlantis {
+    background-color: #F5F7FA;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+.card-text.atlantis {
+    
+    
 }
 
 .card-header {
@@ -33,11 +58,13 @@ div.card {
 
 .datos.col-sm-3 {
     text-align: center;
+    font-size: 15px;
 }
 
 .card.ue {
     background-color: transparent;
     border: 0px;
+    margin-top: 40px;
 }
 
 .card-header.ue {
@@ -58,13 +85,6 @@ img.datosimg {
     width: auto;
     margin: auto;
     padding-bottom: 5px;
-}
-
-h1.testi {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 40px;
-    text-decoration: underline;
 }
 
 .testimonial-quote {

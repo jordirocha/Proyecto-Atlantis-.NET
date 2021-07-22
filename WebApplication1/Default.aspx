@@ -2,6 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <link href="Default.css" rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 
     <div class="jumbotron">
         <!-- Slider -->
@@ -78,6 +80,25 @@
                 </p>
             </div>
         </div>
+
+        <div class="data">
+				<ul>
+					<li>
+                        <asp:Label ID="MostrarRegistros" runat="server" Text=""></asp:Label>
+						
+						<span>Registros</span>
+					</li>
+					<li>
+						8
+						<span>Actividades</span>
+					</li>
+					<li>
+						6
+						<span>Eventos</span>
+					</li>
+				</ul>
+			</div>
+
     </div>
 
 </asp:Content>
