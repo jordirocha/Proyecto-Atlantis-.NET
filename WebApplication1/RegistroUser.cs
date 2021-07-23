@@ -8,7 +8,7 @@ using System.Web;
 
 namespace WebApplication1
 {
-    public class RegistroUser : IComparer<string>
+    public class RegistroUser 
     {
         static string clave = "cadenadecifrado"; // Clave de cifrado.   
 
@@ -43,16 +43,46 @@ namespace WebApplication1
                 registro.Close();
                 Console.WriteLine(ex.ToString());
             }
-
+            registro.Close();
             return false;
         }
 
-        public int ComprobarPasswords(string pass1, string pass2)
+        public bool ExisteEmail(string email)
         {
-            return Compare(pass1, pass2);
+            SqlDataReader dr = null;
+            try
+            {
+                string sqlEmail = "SELECT * FROM Usuario WHERE email = @pEmail";
+
+                SqlCommand cmd = new SqlCommand(sqlEmail, conn.Conexion);
+                SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.VarChar, 100);
+                pEmail.Value = email;
+                cmd.Parameters.Add(pEmail);
+
+                 dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    dr.Close();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                dr.Close();
+            }
+
+            dr.Close();
+            return false;
         }
 
-        public bool ComprobarCampos(string nombre, string email, string pass, string fechaNacimiento)
+
+        public int ComprobarPasswords(string pass1, string pass2)
+        {
+            return pass1.CompareTo(pass2);
+        }
+
+        public bool ComprobarCampos(string nombre, string email, string pass, DateTime fechaNacimiento)
         {
             return nombre == null || email == null || pass == null || fechaNacimiento == null;
         }
@@ -61,8 +91,8 @@ namespace WebApplication1
         {
             try
             {
-                string existUser = "INSERT INTO  Usuario (nombre,email,contrasenya,fechaNacimiento,tipoUsuario) Values (@pNombre,@pEmail,@pContrasenya,@pFechaNacimiento,@pRol)";
-                SqlCommand cmd = new SqlCommand(existUser, conn.Conexion);
+                string sqlInsertUsuario = "INSERT INTO  Usuario (nombre,email,contrasenya,fechaNacimiento,tipoUsuario) Values (@pNombre,@pEmail,@pContrasenya,@pFechaNacimiento,@pRol)";
+                SqlCommand cmd = new SqlCommand(sqlInsertUsuario, conn.Conexion);
 
                 SqlParameter pNombre = new SqlParameter("@pNombre", System.Data.SqlDbType.NVarChar, 100);
                 pNombre.Value = usuario.Nombre;
@@ -124,11 +154,6 @@ namespace WebApplication1
 
             // Convertimos la cadena a Base64 y la devolvemos
             return Convert.ToBase64String(conCifrado, 0, conCifrado.Length);
-        }
-
-        public int Compare(string x, string y)
-        {
-            return string.Compare(x, y);
         }
 
     }

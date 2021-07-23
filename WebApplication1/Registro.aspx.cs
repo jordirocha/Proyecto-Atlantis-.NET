@@ -17,10 +17,10 @@ namespace WebApplication1
         protected void ClickRegistrarse(object sender, EventArgs e)
         {
             RegistroUser user = new RegistroUser();
-            if (!user.ComprobarCampos(TxtName.Text, TxtEmail.Text, TxtPass.Text, TextFecha.Text.ToString()))
+            if (!user.ComprobarCampos(TxtName.Text, TxtEmail.Text, TxtPass.Text, DateTime.Parse(TextFecha.Text)))
             {
-               // if (!user.ControlRegistro(TxtEmail.Text) && user.Compare(TxtPass.Text, TxtPass2.Text) == 0)
-                //{
+                if (!user.ExisteEmail(TxtEmail.Text) && user.ComprobarPasswords(TxtPass.Text, TxtPass2.Text) == 0)
+                {
                     Usuario usuario = new Usuario();
                     usuario.Nombre = TxtName.Text;
                     usuario.Email = TxtEmail.Text;
@@ -28,13 +28,15 @@ namespace WebApplication1
                     usuario.FechaNacimiento = DateTime.Parse(TextFecha.Text);
                     user.Registro(usuario);
                     Response.Redirect("Default.aspx");
-                /*}
-                else { Label1.Text = "Fallo"; }*/
+                }
+                else { 
+                    Label1.Text = "Existe email o contraseñas no coinciden"; 
+                }
 
             }
             else
             {
-                Label1.Text = "Fallo";
+                Label1.Text = "Campos erroneos";
             }
         }
     }

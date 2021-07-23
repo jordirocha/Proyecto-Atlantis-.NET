@@ -12,6 +12,18 @@ namespace WebApplication1
         DateTime fechaNacimiento;
         string tipoPermiso;
 
+        public Usuario()
+        {
+        }
+
+        public Usuario(string nombre, string email, string contrasenya, DateTime fechaNacimiento)
+        {
+            this.nombre = nombre;
+            this.email = email;
+            this.contrasenya = contrasenya;
+            this.fechaNacimiento = fechaNacimiento;
+        }
+
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Email { get => email; set => email = value; }
