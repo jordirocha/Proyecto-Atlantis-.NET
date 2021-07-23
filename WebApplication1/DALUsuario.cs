@@ -5,8 +5,10 @@ using System.Text;
 
 namespace WebApplication1
 {
-    internal class DALUsuario
+    public class DALUsuario
     {
+        static string clave = "cadenadecifrado"; // Clave de cifrado.   
+
         DbConnection conn = null;
         public DALUsuario()
         {
@@ -15,7 +17,7 @@ namespace WebApplication1
         public bool IniciarSesion(string email, string pass)
         {
             string contrasenya = "";
-            string sqlLogIn = @"SELECT * from USUARIO
+            string sqlLogIn = @"SELECT contrasenya from USUARIO
             WHERE email = @pEmail";
 
             SqlCommand cmd = new SqlCommand(sqlLogIn, conn.Conexion);
@@ -29,11 +31,8 @@ namespace WebApplication1
             SqlDataReader registro = cmd.ExecuteReader();
             if (registro.Read())
             {
-                while (registro.Read())
-                {
-                    contrasenya = (string)registro["nombre"];
-                }
                 registro.Close();
+                contrasenya = (string)cmd.ExecuteScalar();
                 contrasenya = Descifrar(contrasenya);
                 if (contrasenya.CompareTo(pass) == 0)
                 {
@@ -82,7 +81,7 @@ namespace WebApplication1
 
             // Ciframos utilizando el Algoritmo MD5.
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            claveEncriptacion = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(cadena));
+            claveEncriptacion = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(clave));
             md5.Clear();
 
             //Desciframos utilizando el Algoritmo 3DES.
