@@ -24,7 +24,7 @@
               <div class="legend"></div>
               <div class="content">
                 <div class="content-txt">
-                  <h1>Ayúdanos a descontaminar</h1>
+                  <h1>Ayudando al planeta...</h1>
                 </div>
               </div>
               <div class="image">
@@ -35,7 +35,7 @@
               <div class="legend"></div>
               <div class="content">
                 <div class="content-txt">
-                  <h1>Obtendrás muchas recompensas</h1>
+                  <h1>Obtendrás increíbles recompensas</h1>
                 </div>
               </div>
               <div class="image">
