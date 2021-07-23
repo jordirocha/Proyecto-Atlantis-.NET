@@ -81,6 +81,9 @@ li.nav-item {
     background: #005e63;
 }
 
+    .botonacceso:hover {
+        background: rgba(76,190,184,1);
+    }
 
 /* Mi perfil */
 a.nav-link.dropdown-toggle {
