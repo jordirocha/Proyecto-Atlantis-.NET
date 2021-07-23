@@ -2,6 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <link href="Default.css" rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 
     <div class="jumbotron">
         <!-- Slider -->
@@ -22,7 +24,7 @@
               <div class="legend"></div>
               <div class="content">
                 <div class="content-txt">
-                  <h1>Ayúdanos a descontaminar</h1>
+                  <h1>Ayudando al planeta...</h1>
                 </div>
               </div>
               <div class="image">
@@ -33,7 +35,7 @@
               <div class="legend"></div>
               <div class="content">
                 <div class="content-txt">
-                  <h1>Obtendrás muchas recompensas</h1>
+                  <h1>Obtendrás increíbles recompensas</h1>
                 </div>
               </div>
               <div class="image">
@@ -78,6 +80,24 @@
                 </p>
             </div>
         </div>
+
+        <div class="data">
+				<ul>
+					<li>
+                        <asp:Label id="registrostotal" class="numerodatos" runat="server" Text=""></asp:Label>
+						<span>Registros</span>
+					</li>
+					<li class="datosactiv">
+						<asp:Label id="actividadestotal" class="numerodatos" runat="server" Text=""></asp:Label>
+						<span>Actividades</span>
+					</li>
+					<li>
+						<asp:Label id="eventostotal" class="numerodatos" runat="server" Text=""></asp:Label>
+						<span>Eventos</span>
+					</li>
+				</ul>
+			</div>
+
     </div>
 
 </asp:Content>

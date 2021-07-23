@@ -31,6 +31,7 @@
 
         <asp:TextBox id="TextNombrereg" type="text" class="form-control" placeholder="Nombre completo" required="" autofocus="" runat="server"></asp:TextBox>
         <asp:TextBox id="TextEmailreg" type="email" class="form-control" placeholder="E-mail" required="" runat="server"></asp:TextBox>
+        <asp:TextBox id="TextFecha" class="form-control" required="" placeholder="Fecha de nacimiento" onblur="(this.type='text')" onfocus="(this.type='date')" runat="server"></asp:TextBox>
         <asp:TextBox id="TextPassreg" type="password" class="form-control" placeholder="Contraseña" required="" runat="server"></asp:TextBox>
         <asp:TextBox id="TextPass2reg" type="password" class="form-control" placeholder="Repetir contraseña" required="" runat="server"></asp:TextBox>
         
@@ -39,7 +40,7 @@
 
         <asp:Button ID="Button2" class="btn btn-lg btn-primary btn-block" type="submit" Style="width: 100%" runat="server" Text="Registrarse" />
         <p class="fraselogin">¿Ya tienes cuenta? Inicia sesión <a href="LogIn.aspx">aquí</a>. </p>
-        <p class="mt-5 mb-3 text-muted">&copy; <%: DateTime.Now.Year %> - ATLANTIS</p>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; <%: DateTime.Now.Year %> - ATLANTIS</p>
     </form>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
