@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -13,28 +14,61 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            mostrarRegistros();
+            mostrarActividades();
+            mostrarEventos();
         }
 
         protected void mostrarRegistros()
         {
             DbConnection cnx;
             cnx = new DbConnection();
-
-            string sql = @"SELECT count(*)
+            
+            string sql = @"SELECT count(*) as totalregistros
                             FROM dbo.Usuario";
             SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
-            MostrarRegistros.Text = cmd.ExecuteScalar().ToString();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            registrostotal.Text = dt.Rows[0]["totalregistros"].ToString();
+           
+            cnx.Conexion.Close();
 
         }
 
-        protected void MostrarActividades()
+        protected void mostrarActividades()
         {
+            DbConnection cnx;
+            cnx = new DbConnection();
 
+            string sql = @"SELECT count(*) as totalactividades
+                            FROM dbo.Actividad";
+            SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            actividadestotal.Text = dt.Rows[0]["totalactividades"].ToString();
+
+            cnx.Conexion.Close();
         }
 
-        protected void MostrarEventos()
+        protected void mostrarEventos()
         {
+            DbConnection cnx;
+            cnx = new DbConnection();
 
+            string sql = @"SELECT count(*) as totaleventos
+                            FROM dbo.Evento";
+            SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            eventostotal.Text = dt.Rows[0]["totaleventos"].ToString();
+
+            cnx.Conexion.Close();
         }
     }
 }

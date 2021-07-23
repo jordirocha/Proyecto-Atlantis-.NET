@@ -84,16 +84,15 @@
         <div class="data">
 				<ul>
 					<li>
-                        <asp:Label ID="MostrarRegistros" runat="server" Text=""></asp:Label>
-						
+                        <asp:Label id="registrostotal" class="numerodatos" runat="server" Text=""></asp:Label>
 						<span>Registros</span>
 					</li>
-					<li>
-						8
+					<li class="datosactiv">
+						<asp:Label id="actividadestotal" class="numerodatos" runat="server" Text=""></asp:Label>
 						<span>Actividades</span>
 					</li>
 					<li>
-						6
+						<asp:Label id="eventostotal" class="numerodatos" runat="server" Text=""></asp:Label>
 						<span>Eventos</span>
 					</li>
 				</ul>

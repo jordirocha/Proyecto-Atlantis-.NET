@@ -171,8 +171,11 @@
         display: inline-block;
         font-size: 1.5em;
         font-family: 'Lato';
-        border-right: solid 1px #bdc3c7;
-        
+    }
+
+    li.datosactiv {
+        border-left: solid 2px #ffffff;
+        border-right: solid 2px #ffffff;
     }
 
         .data li span {
@@ -182,4 +185,8 @@
             font-size: .5em;
             margin-top: .6em;
             font-weight: 700;
+        }
+
+        .data li span.numerodatos {
+            font-size: 1em;
         }
