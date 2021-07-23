@@ -13,5 +13,34 @@ namespace WebApplication1
         {
 
         }
+
+        protected void ButFormContacto(object sender, EventArgs e)
+        {
+            TxtFormEnviado.Text = "";
+            TxtFormEnviado2.Text = "";
+
+            if (string.IsNullOrEmpty(TextEmail.Text) || string.IsNullOrEmpty(TextAsunto.Text) || string.IsNullOrEmpty(TextMensaje.Text))
+            {
+                TextEmail.Text = "";
+                TextAsunto.Text = "";
+                TextMensaje.Text = "";
+                TxtFormEnviado2.Text = "No has completado todos los campos. Inténtalo de nuevo.";
+            }
+            else
+                TxtFormEnviado.Text = "Formulario enviado con éxito!";
+  
+        }
+
+        protected void ButSuscripcionEmail(object sender, EventArgs e)
+        {
+            TxtSuscripcionEnviada.Text = "";
+            TxtSuscripcionEnviada2.Text = "";
+            if (!string.IsNullOrEmpty(TextEmail2.Text))
+                TxtSuscripcionEnviada.Text = "Suscripción realizada!";
+            else
+                TxtSuscripcionEnviada2.Text = "Ingresa un email válido.";
+        }
+
+
     }
 }

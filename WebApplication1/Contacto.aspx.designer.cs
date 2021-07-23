@@ -51,6 +51,24 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Button ButContacto;
 
         /// <summary>
+        /// Control TxtFormEnviado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TxtFormEnviado;
+
+        /// <summary>
+        /// Control TxtFormEnviado2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TxtFormEnviado2;
+
+        /// <summary>
         /// Control TextEmail2.
         /// </summary>
         /// <remarks>
@@ -67,5 +85,23 @@ namespace WebApplication1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButSuscripcion;
+
+        /// <summary>
+        /// Control TxtSuscripcionEnviada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TxtSuscripcionEnviada;
+
+        /// <summary>
+        /// Control TxtSuscripcionEnviada2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TxtSuscripcionEnviada2;
     }
 }
