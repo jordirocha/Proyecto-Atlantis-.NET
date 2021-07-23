@@ -35,7 +35,7 @@ namespace WebApplication1
                 pNombre.Value = act.NombreActividad;
                 SqlParameter pDescripcion = new SqlParameter("@pDescripcion", System.Data.SqlDbType.NVarChar, 50);
                 pDescripcion.Value = act.DescripcionActividad;
-                SqlParameter pFecha = new SqlParameter("@pFecha", act.FechaActividad);
+                SqlParameter pFecha = new SqlParameter("@pFecha", act.FechaActividad.Date);
                 SqlParameter pPuntosActividad = new SqlParameter("@pPuntosAdquiridos", act.PuntosActividad);
                 SqlParameter pUbicacion = new SqlParameter("@pUbicacion", System.Data.SqlDbType.NVarChar,50);
                 pUbicacion.Value = act.Ubicacionactividad;

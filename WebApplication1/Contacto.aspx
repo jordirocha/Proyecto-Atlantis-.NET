@@ -3,7 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <link href="Contacto.css" rel="stylesheet" type="text/css" />
 
-
     <div class="container contacto">
         <div class="row">
             <div class="col-md-6 izq">

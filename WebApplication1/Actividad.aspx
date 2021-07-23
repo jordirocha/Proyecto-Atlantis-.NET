@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Actividad.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+﻿<%@ Page Title="Actividades" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Actividad.aspx.cs" Inherits="WebApplication1.WebForm1" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="Actividad.css" rel="stylesheet" />
-
+    <link href="Actividad.css" rel="stylesheet" type="text/css" />
+    
     <div class="row">
     <asp:Repeater ID="repPosts" runat="server">
     <ItemTemplate>
-        <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 actividades">
             <div class="column">
                 <!-- Post-->
                 <div class="post-module hover">
@@ -38,7 +38,7 @@
                             <asp:Label ID="lbAforoCantidad" runat="server" Text='<%#Eval("AforoActividad") %>'></asp:Label>
                         </span>
                         <span class="comments">
-                            <a href="#">Apuntarme</a></span></div>
+                            <a class="apuntarme" href="#">Apuntarme</a></span></div>
                     </div>
                 </div>
             </div>                         
@@ -46,4 +46,5 @@
     </ItemTemplate>
     </asp:Repeater>
     </div>
+
 </asp:Content>
