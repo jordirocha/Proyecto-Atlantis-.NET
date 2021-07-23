@@ -25,7 +25,7 @@ namespace WebApplication1
             cnx = new DbConnection();
             
             string sql = @"SELECT count(*) as totalregistros
-                            FROM Usuario";
+                            FROM dbo.Usuario";
             SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
