@@ -107,7 +107,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Actividad.aspx" />
+    <Content Include="Actividad.css" />
     <Content Include="Nosotros.css" />
+    <Content Include="Scripts\Actividad.js" />
     <Content Include="Scripts\Registro.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="Login.css" />
@@ -290,6 +293,15 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividad.aspx.cs">
+      <DependentUpon>Actividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Actividad.aspx.designer.cs">
+      <DependentUpon>Actividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActividadCls.cs" />
+    <Compile Include="ActividadDAL.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="DbConnection.cs" />

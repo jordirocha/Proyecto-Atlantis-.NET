@@ -68,7 +68,7 @@
                             <a class="nav-link" href="Default.aspx">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Actividades</a>
+                            <a class="nav-link" href="Actividad.aspx">Actividades</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Eventos</a>
@@ -176,7 +176,7 @@
                   <a class="listafooter" onclick="ScrollArriba()">Inicio</a>
                 </li>
                 <li>
-                  <a href="#!" class="listafooter">Actividades</a>
+                  <a href="Actividad.aspx" class="listafooter">Actividades</a>
                 </li>
                 <li>
                   <a href="#!" class="listafooter">Eventos</a>
