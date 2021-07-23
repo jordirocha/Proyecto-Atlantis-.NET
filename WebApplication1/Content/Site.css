@@ -81,6 +81,22 @@ li.nav-item {
     background: #005e63;
 }
 
+
+/* Mi perfil */
+a.nav-link.dropdown-toggle {
+    color: black;
+    text-decoration: none;
+    margin-right: -100px;
+}
+
+li#puntos {
+    padding-right: 35px;
+    list-style: none;
+}
+
+a#salir {
+    margin-right: -40px;
+}
 /* Ripple magic */
 .botonacceso {
     position: relative;
