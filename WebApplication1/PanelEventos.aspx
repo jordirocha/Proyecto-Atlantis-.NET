@@ -59,19 +59,42 @@
         </div>
 
 
-        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" class="table table-hover">
+        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" class="table table-hover" AllowPaging="True" PageSize="2" DataKeyNames="idEvento" DataSourceID="SqlDataSource1">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID"/>
-                <asp:BoundField DataField="Evento" HeaderText="Evento"/>
-                <asp:BoundField DataField="Ubicación" HeaderText="Ubicación"/>
-                <asp:BoundField DataField="Fecha" HeaderText="Fecha"/>
-                <asp:BoundField DataField="Puntos" HeaderText="Puntos"/>
-                <asp:BoundField DataField="Aforo" HeaderText="Aforo"/>
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion"/>
-                <asp:TemplateField HeaderText="Image">
+                <asp:BoundField DataField="idEvento" HeaderText="idEvento" InsertVisible="False" ReadOnly="True" SortExpression="idEvento" />
+                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%#"data:Image/jpg;base64," + Convert.ToBase64String((byte[])Eval("fotoEvento")) %>'/>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <asp:Label ID="Label1" runat="server" Text='<%#Eval("nombre") %>' Font-Bold="True" Font-Size="X-Large"></asp:Label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <asp:Label ID="Label8" runat="server" Text='<%# "<strong>Lugar: </strong>" + Eval("ubicacion") %>'></asp:Label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <asp:Label ID="Label15" runat="server" Text='<%# "<strong>Fecha:</strong> "+ Eval("fecha") %>'></asp:Label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <asp:Label ID="Label22" runat="server" Text='<%# "<strong>Puntos:</strong> "+ Eval("puntosRequeridos") %>'></asp:Label>
+                                        </div>
+                                        <div class="col-auto">
+
+                                            <asp:Label ID="Label4" runat="server" Text='<%# "<strong>Aforo:</strong> "+ Eval("aforo") %>'></asp:Label>
+                                        </div>
+                                        <div class="col-12">
+                                            <asp:Label ID="Label5" runat="server" Text='<%# "<strong>Descripción:</strong> <br/>"+ Eval("descripcion") %>'></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <asp:Image ID="Image1" runat="server" Width="200px" class="img-fluid" ImageUrl='<%#"data:Image/jpg;base64," + Convert.ToBase64String((byte[])Eval("fotoEvento")) %>' />
+                                </div>
+                            </div>
+                        </div>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -83,52 +106,11 @@
             <SortedAscendingHeaderStyle BackColor="#808080" />
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
-
         </asp:GridView>
 
-     <!--    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" class="table table-hover">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
-            <Columns>
-                <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar" />
-                <asp:ButtonField ButtonType="Button" CommandName="Edit" HeaderText="Editar" ShowHeader="True" Text="Editar" />
-                <asp:ImageField >
-                </asp:ImageField>
-            </Columns>
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-            <%--<SortedAscendingCellStyle BackColor="#F1F1F1" />--%>
-            <SortedAscendingHeaderStyle BackColor="Gray" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#383838" />
-        </asp:GridView>
-          <asp:Label ID="Label1" runat="server" Text="Label">
 
-            <div class="col-md-3" id="Alerta">
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-            </symbol>
-            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-            </symbol>
-            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            </symbol>
-        </svg>
-        <div class="alert alert-success d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <use xlink:href="#check-circle-fill" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
-            <div>
-                ¡Nuevo evento insertado!
-            </div>
-        </div>
-        </div>
 
-        </asp:Label>-->
-
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>" SelectCommand="SELECT idEvento,nombre,descripcion, fecha,puntosRequeridos,ubicacion,aforo,fotoEvento FROM evento"></asp:SqlDataSource>
 
     </div>
 

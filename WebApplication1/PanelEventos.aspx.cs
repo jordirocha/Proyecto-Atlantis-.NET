@@ -13,47 +13,25 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarEventos();
-            
+            // CargarEventos();
         }
-     
+
         protected void ButInsertEvento(object sender, EventArgs e)
         {
             HttpPostedFile postedFile = FotoEvento.PostedFile;
             Stream stream = postedFile.InputStream;
             BinaryReader binaryReader = new BinaryReader(stream);
-            byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
-            // Insert nuevo evento
-            DbConnection con = new DbConnection();
-            SqlCommand cmd = new SqlCommand("insertarEvento", con.Conexion);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            byte[] bytesFoto = binaryReader.ReadBytes((int)stream.Length);
 
-            SqlParameter pNombre = new SqlParameter("@nombre", System.Data.SqlDbType.VarChar, 100);
-            pNombre.Value = TxtNomEvento.Text;
-            cmd.Parameters.Add(pNombre);
+            DALEvento evento = new DALEvento();
 
-            SqlParameter pDesc = new SqlParameter("@descripcion", System.Data.SqlDbType.VarChar);
-            pDesc.Value = TxtDesc.Text;
-            cmd.Parameters.Add(pDesc);
-
-            SqlParameter pfecha = new SqlParameter("@fecha", DateTime.Parse(TxtFechaEvento.Text));
-            cmd.Parameters.Add(pfecha);
-
-            SqlParameter pPuntos = new SqlParameter("@puntos", TxtPuntos.Text);
-            cmd.Parameters.Add(pPuntos);
-
-            SqlParameter pUbicacion = new SqlParameter("@ubicacion", System.Data.SqlDbType.VarChar, 100);
-            pUbicacion.Value = TxtUbicacion.Text;
-            cmd.Parameters.Add(pUbicacion);
-
-            SqlParameter pAforo = new SqlParameter("@limite", TxtAforo.Text);
-            cmd.Parameters.Add(pAforo);
-
-            SqlParameter pFoto = new SqlParameter("@foto", bytes);
-            cmd.Parameters.Add(pFoto);
-
-            cmd.ExecuteNonQuery();
-            CargarEventos();
+            evento.InsertarEvento(TxtNomEvento.Text,
+                TxtDesc.Text,
+                DateTime.Parse(TxtFechaEvento.Text),
+                int.Parse(TxtPuntos.Text),
+                TxtUbicacion.Text,
+                int.Parse(TxtAforo.Text),
+                bytesFoto);
 
             Response.Redirect("PanelEventos.aspx");
         }
