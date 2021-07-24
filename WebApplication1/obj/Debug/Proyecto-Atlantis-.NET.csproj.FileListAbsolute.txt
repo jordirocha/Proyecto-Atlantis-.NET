@@ -457,3 +457,4 @@ C:\Users\Admin\Music\Proyecto\Proyecto-Atlantis-.NET\WebApplication1\obj\Debug\P
 C:\Users\Admin\Music\Proyecto\Proyecto-Atlantis-.NET\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.CopyComplete
 C:\Users\Admin\Music\Proyecto\Proyecto-Atlantis-.NET\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Admin\Music\Proyecto\Proyecto-Atlantis-.NET\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.AssemblyReference.cache

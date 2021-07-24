@@ -21,31 +21,32 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Nombre del evento</label>
-                                <asp:TextBox ID="TextBox1" class="form-control" runat="server" required></asp:TextBox>
+                                <asp:TextBox ID="TxtNomEvento" class="form-control" runat="server" required=""></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Fecha</label>
-                                <asp:TextBox ID="TextBox3" textmode="DateTimeLocal" runat="server" class="form-label"></asp:TextBox>
+                                <asp:TextBox ID="TxtFechaEvento" class="form-label" TextMode="DateTimeLocal" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Puntos requeridos</label>
-                                <input type="text" class="form-control" required>
+                                <asp:TextBox ID="TxtPuntos" class="form-control" runat="server" TextMode="Number" MinimumValue="0"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Ubicación</label>
-                                <input type="text" class="form-control" required>
+                                <asp:TextBox ID="TxtUbicacion" class="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Aforo</label>
-                                <input type="text" class="form-control" required>
+                                <asp:TextBox ID="TxtAforo" class="form-control" runat="server" TextMode="Number" MinimumValue="0"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Foto</label>
-                                <asp:FileUpload ID="FileUpload1" class="form-control" runat="server" aria-describedby="inputGroupFileAddon03" aria-label="Upload" required />
+                                <asp:FileUpload ID="FotoEvento" class="form-control" runat="server" aria-describedby="inputGroupFileAddon03" aria-label="Upload" required="" />
                             </div>
                             <div class="col-md-12">
                                 <label for="exampleFormControlTextarea1" class="form-label">Descripción del evento</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+
+                                <asp:TextBox ID="TxtDesc" class="form-control" Rows="5" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -58,11 +59,40 @@
         </div>
 
 
-        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" class="table table-hover">
+        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" class="table table-hover">
+            <AlternatingRowStyle BackColor="#CCCCCC" />
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID"/>
+                <asp:BoundField DataField="Evento" HeaderText="Evento"/>
+                <asp:BoundField DataField="Ubicación" HeaderText="Ubicación"/>
+                <asp:BoundField DataField="Fecha" HeaderText="Fecha"/>
+                <asp:BoundField DataField="Puntos" HeaderText="Puntos"/>
+                <asp:BoundField DataField="Aforo" HeaderText="Aforo"/>
+                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion"/>
+                <asp:TemplateField HeaderText="Image">
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%#"data:Image/jpg;base64," + Convert.ToBase64String((byte[])Eval("fotoEvento")) %>'/>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
+
+        </asp:GridView>
+
+     <!--    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" class="table table-hover">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar" />
                 <asp:ButtonField ButtonType="Button" CommandName="Edit" HeaderText="Editar" ShowHeader="True" Text="Editar" />
+                <asp:ImageField >
+                </asp:ImageField>
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -73,7 +103,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-        <asp:Label ID="Label1" runat="server" Text="Label">
+          <asp:Label ID="Label1" runat="server" Text="Label">
 
             <div class="col-md-3" id="Alerta">
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -89,15 +119,15 @@
         </svg>
         <div class="alert alert-success d-flex align-items-center" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                <use xlink:href="#check-circle-fill" />
-            </svg>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <use xlink:href="#check-circle-fill" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
             <div>
                 ¡Nuevo evento insertado!
             </div>
         </div>
         </div>
 
-        </asp:Label>
+        </asp:Label>-->
 
 
     </div>

@@ -13,15 +13,13 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DALEvento eventos = new DALEvento();
-            GridView1.DataSource = eventos.seleccionarEventos();
-            GridView1.DataBind();
-            Label1.Visible = false;
+            CargarEventos();
+            
         }
      
         protected void ButInsertEvento(object sender, EventArgs e)
         {
-            HttpPostedFile postedFile = FileUpload1.PostedFile;
+            HttpPostedFile postedFile = FotoEvento.PostedFile;
             Stream stream = postedFile.InputStream;
             BinaryReader binaryReader = new BinaryReader(stream);
             byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
@@ -29,11 +27,42 @@ namespace WebApplication1
             DbConnection con = new DbConnection();
             SqlCommand cmd = new SqlCommand("insertarEvento", con.Conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
             SqlParameter pNombre = new SqlParameter("@nombre", System.Data.SqlDbType.VarChar, 100);
-            pNombre.Value = TextBox1.Text;
+            pNombre.Value = TxtNomEvento.Text;
             cmd.Parameters.Add(pNombre);
+
+            SqlParameter pDesc = new SqlParameter("@descripcion", System.Data.SqlDbType.VarChar);
+            pDesc.Value = TxtDesc.Text;
+            cmd.Parameters.Add(pDesc);
+
+            SqlParameter pfecha = new SqlParameter("@fecha", DateTime.Parse(TxtFechaEvento.Text));
+            cmd.Parameters.Add(pfecha);
+
+            SqlParameter pPuntos = new SqlParameter("@puntos", TxtPuntos.Text);
+            cmd.Parameters.Add(pPuntos);
+
+            SqlParameter pUbicacion = new SqlParameter("@ubicacion", System.Data.SqlDbType.VarChar, 100);
+            pUbicacion.Value = TxtUbicacion.Text;
+            cmd.Parameters.Add(pUbicacion);
+
+            SqlParameter pAforo = new SqlParameter("@limite", TxtAforo.Text);
+            cmd.Parameters.Add(pAforo);
+
+            SqlParameter pFoto = new SqlParameter("@foto", bytes);
+            cmd.Parameters.Add(pFoto);
+
             cmd.ExecuteNonQuery();
-            Label1.Visible = true;
+            CargarEventos();
+
+            Response.Redirect("PanelEventos.aspx");
+        }
+
+        public void CargarEventos()
+        {
+            DALEvento eventos = new DALEvento();
+            GridView1.DataSource = eventos.SeleccionarEventos();
+            GridView1.DataBind();
         }
     }
 }

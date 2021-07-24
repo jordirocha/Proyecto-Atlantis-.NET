@@ -19,6 +19,7 @@ namespace WebApplication1
                 Session["nombre"] = user.Nombre;
                 Session["rol"] = user.TipoPermiso;
                 Response.Redirect("Default.aspx");
+               
             }
         }
         protected void ButIniciarSesion(object sender, EventArgs e)
