@@ -14,6 +14,8 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             // CargarEventos();
+           // SqlDataSource1.SelectParameters["@IdUsu"].DefaultValue = /*Session["id"].ToString();*/ "14";
+            // GridView1.DataBind();
         }
 
         protected void ButInsertEvento(object sender, EventArgs e)

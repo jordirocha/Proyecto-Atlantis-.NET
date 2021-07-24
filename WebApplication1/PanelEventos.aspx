@@ -110,7 +110,13 @@
 
 
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>" SelectCommand="SELECT idEvento,nombre,descripcion, fecha,puntosRequeridos,ubicacion,aforo,fotoEvento FROM evento"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>"
+            SelectCommand="EventosUsuario" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:SessionParameter Name="IdUsuario" SessionField="ID" Type="Int32" />
+            </SelectParameters>
+            
+        </asp:SqlDataSource>
 
     </div>
 

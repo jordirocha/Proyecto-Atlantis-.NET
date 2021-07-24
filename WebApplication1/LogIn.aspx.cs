@@ -18,6 +18,7 @@ namespace WebApplication1
                 Usuario user = dalUser.VerificarUsuario(checkCookie["email"]);
                 Session["nombre"] = user.Nombre;
                 Session["rol"] = user.TipoPermiso;
+                Session["id"] = user.Id;
                 Response.Redirect("Default.aspx");
                
             }
@@ -31,6 +32,7 @@ namespace WebApplication1
                 Usuario user = dalUser.VerificarUsuario(TextEmail.Text);
                 Session["nombre"] = user.Nombre;
                 Session["rol"] = user.TipoPermiso;
+                Session["id"] = user.Id;
                 if (CheckCookies.Checked)
                 {
                     HttpCookie cookie = new HttpCookie("userInfo");
