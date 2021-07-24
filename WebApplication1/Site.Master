@@ -37,7 +37,6 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
-                
             </Scripts>
         </asp:ScriptManager>
         <!-- Script para el scroll desde abajo (Inicio) \\ SE HA DE CAMBIAR PARA SERVIDOR -->
@@ -49,8 +48,8 @@
                     window.location.href = "Default";
             }
         </script>
-        
-        
+
+
         <!-- Aquí empieza el código del NAVBAR -->
 
         <nav class="navbar  navbar-expand-lg navbar-light bg-light">
@@ -141,114 +140,113 @@
             </div>
         </nav>
 
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
 
-            </asp:ContentPlaceHolder>
-            
-     <!-- WAVE -->
-     <div class="header">
+        <!-- WAVE -->
+        <div class="header">
+
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <!-- Footer -->
 
         <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            <footer>
+                <!-- Grid container -->
+                <div class="p-4">
 
-            </defs>
-            <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-            </svg>
-       </div>
-    </div>
-    <!-- Footer -->
-         
-    <div>
-    <footer>
-        <!-- Grid container -->
-        <div class="p-4">     
-    
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-              
-            <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
 
-              <ul class="listnav">
-                <li>
-                  <a class="listafooter" onclick="ScrollArriba()">Inicio</a>
-                </li>
-                <li>
-                  <a href="Actividad.aspx" class="listafooter">Actividades</a>
-                </li>
-                <li>
-                  <a href="#!" class="listafooter">Eventos</a>
-                </li>
-                <li>
-                  <a href="Nosotros.aspx" class="listafooter">Nosotros</a>
-                </li>
-                <li>
-                  <a href="Contacto.aspx" class="listafooter">Contacto</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
+                        <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
 
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
-              <ul class="list-politics">
-                <li>
-                  <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" target="_blank" class="politics">Política de Privacidad </a>|
-                  <a href="http://www.interior.gob.es/politica-de-cookies" target="_blank" class="politics"> Política de Cookies </a>|
-                  <a href="https://espana.edp.com/es/terminos-y-condiciones-de-uso-y-politica-de-privacidad-0" target="_blank"" class="politics"> Condiciones de Uso</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
+                            <ul class="listnav">
+                                <li>
+                                    <a class="listafooter" onclick="ScrollArriba()">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="Actividad.aspx" class="listafooter">Actividades</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="listafooter">Eventos</a>
+                                </li>
+                                <li>
+                                    <a href="Nosotros.aspx" class="listafooter">Nosotros</a>
+                                </li>
+                                <li>
+                                    <a href="Contacto.aspx" class="listafooter">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
 
-            <!--Grid column-->
-            <div id="redesociales" class="col-lg-4 col-md-4 mb-4 mb-md-0">
-                <!-- Section: Social media -->
-                    <section class="field">
-                      <!-- Twitter -->
-                      <a class="sns-btn sns-btn--twitter" href="https://www.twitter.com" role="button">
-                          <asp:Image class="sns-btn__icon fab fa-twitter" ImageUrl="~/Icons/twitter.png" runat="server"/></a>
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-4 mb-6 mb-md-0">
+                            <ul class="list-politics">
+                                <li>
+                                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" target="_blank" class="politics">Política de Privacidad </a>|
+                  <a href="http://www.interior.gob.es/politica-de-cookies" target="_blank" class="politics">Política de Cookies </a>|
+                  <a href="https://espana.edp.com/es/terminos-y-condiciones-de-uso-y-politica-de-privacidad-0" target="_blank" class="politics">Condiciones de Uso</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
 
-                      <!-- Google -->
-                      <a class="sns-btn sns-btn--google" href="Icons/google.png" role="button"
-                        ><asp:Image class="sns-btn__icon fab fa-google" ImageUrl="~/Icons/google.png" runat="server"/></a>
+                        <!--Grid column-->
+                        <div id="redesociales" class="col-lg-4 col-md-4 mb-4 mb-md-0">
+                            <!-- Section: Social media -->
+                            <section class="field">
+                                <!-- Twitter -->
+                                <a class="sns-btn sns-btn--twitter" href="https://www.twitter.com" role="button">
+                                    <asp:Image class="sns-btn__icon fab fa-twitter" ImageUrl="~/Icons/twitter.png" runat="server" /></a>
 
-                      <!-- Instagram -->
-                      <a class="sns-btn sns-btn--instagram" href="Icons/instagram.png" role="button"
-                        ><asp:Image class="sns-btn__icon fab fa-instagram" ImageUrl="~/Icons/instagram.png" runat="server"/></a>
+                                <!-- Google -->
+                                <a class="sns-btn sns-btn--google" href="Icons/google.png" role="button">
+                                    <asp:Image class="sns-btn__icon fab fa-google" ImageUrl="~/Icons/google.png" runat="server" /></a>
 
-                      <!-- Github -->
-                      <a class="sns-btn sns-btn--github" href="Icons/github.png" role="button">
-                          <asp:Image class="sns-btn__icon fab fa-github" ImageUrl="~/Icons/github.png" runat="server"/></a>
-                    </section>   
-                    <div class="p-3">
-                        <p class="copyright">&copy; <%= DateTime.Now.Year %> - ATLANTIS </p>
-                        <br />
-                        
+                                <!-- Instagram -->
+                                <a class="sns-btn sns-btn--instagram" href="Icons/instagram.png" role="button">
+                                    <asp:Image class="sns-btn__icon fab fa-instagram" ImageUrl="~/Icons/instagram.png" runat="server" /></a>
+
+                                <!-- Github -->
+                                <a class="sns-btn sns-btn--github" href="Icons/github.png" role="button">
+                                    <asp:Image class="sns-btn__icon fab fa-github" ImageUrl="~/Icons/github.png" runat="server" /></a>
+                            </section>
+                            <div class="p-3">
+                                <p class="copyright">&copy; <%= DateTime.Now.Year%> - ATLANTIS </p>
+                                <br />
+
+                            </div>
+
+                            <!-- Section: Social media -->
+                        </div>
+                        <div>
+                            <p class="usnames">Desarrollado por: Daniel Vela | Jordi Rocha | Eugenio Cano | Eudald Lladó </p>
+                        </div>
+                        <!--Grid column-->
                     </div>
-
-                <!-- Section: Social media -->
+                    <!--Grid row-->
                 </div>
-              <div>
-                  <p class="usnames"> Desarrollado por: Daniel Vela | Jordi Rocha | Eugenio Cano | Eudald Lladó </p>
-              </div>
-            <!--Grid column-->
+                <!-- Grid container -->
+
+            </footer>
         </div>
-        <!--Grid row-->
-    </div>
-    <!-- Grid container -->
 
-    </footer>
-    </div>
-</div>
 
-</form>
+    </form>
 </body>
 </html>
