@@ -13,5 +13,32 @@ namespace WebApplication1
         {
 
         }
+
+        protected void ButClickRegistrarse(object sender, EventArgs e)
+        {
+            RegistroUser user = new RegistroUser();
+            if (!user.ComprobarCampos(TxtName.Text, TxtEmail.Text, TxtPass.Text, DateTime.Parse(TextFecha.Text)))
+            {
+                if (!user.ExisteEmail(TxtEmail.Text) && user.ComprobarPasswords(TxtPass.Text, TxtPass2.Text) == 0)
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.Nombre = TxtName.Text;
+                    usuario.Email = TxtEmail.Text;
+                    usuario.Contrasenya = TxtPass.Text;
+                    usuario.FechaNacimiento = DateTime.Parse(TextFecha.Text);
+                    user.Registro(usuario);
+                    Response.Redirect("Default.aspx");
+                }
+                else
+                {
+                    LabFallo.Text = "Existe email o contraseñas no coinciden";
+                }
+
+            }
+            else
+            {
+                LabFallo.Text = "Campos erroneos";
+            }
+        }
     }
 }

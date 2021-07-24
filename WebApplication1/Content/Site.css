@@ -42,7 +42,7 @@ textarea {
 .fixed-top {
     position: absolute !important;
 }
-
+/*
 #Image1 {
     height: 100px;
     position: relative;
@@ -51,6 +51,7 @@ textarea {
     margin-left: -80px;
 }
 
+ 
 #navprincipal {
     background-color: white;
 }
@@ -67,7 +68,7 @@ li.nav-item {
 .btn.btn-outline-dark {
     border-radius: 100%;
 }
-
+    */
 
 /* BOTÓN ACCESO */
 .botonacceso {
@@ -85,7 +86,7 @@ li.nav-item {
         background: rgba(76,190,184,1);
     }
 
-/* Mi perfil */
+/* Mi perfil 
 a.nav-link.dropdown-toggle {
     color: black;
     text-decoration: none;
@@ -99,7 +100,8 @@ li#puntos {
 
 a#salir {
     margin-right: -40px;
-}
+}*/
+
 /* Ripple magic */
 .botonacceso {
     position: relative;
