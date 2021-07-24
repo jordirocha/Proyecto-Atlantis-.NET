@@ -114,6 +114,7 @@
             SelectCommand="EventosUsuario" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:SessionParameter Name="IdUsuario" SessionField="ID" Type="Int32" />
+                <!--millor-->
             </SelectParameters>
             
         </asp:SqlDataSource>
