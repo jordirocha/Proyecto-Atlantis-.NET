@@ -21,8 +21,8 @@ namespace WebApplication1
                 Response.Redirect("Default.aspx");
             }
         }
-
-        protected void ButInsertEvento(object sender, EventArgs e)
+             
+        protected void ButAnyadirEvento(object sender, EventArgs e)
         {
             HttpPostedFile postedFile = FotoEvento.PostedFile;
             Stream stream = postedFile.InputStream;
@@ -37,10 +37,15 @@ namespace WebApplication1
                 int.Parse(TxtPuntos.Text),
                 TxtUbicacion.Text,
                 int.Parse(TxtAforo.Text),
-                bytesFoto,
-                int.Parse(Session["id"].ToString()));
+                bytesFoto/*,
+                int.Parse(Session["id"].ToString())*/);
 
             Response.Redirect("PanelEventos.aspx");
+        }
+
+        protected void pruebas(object sender, EventArgs e)
+        {
+
         }
 
         /*public void CargarEventos()

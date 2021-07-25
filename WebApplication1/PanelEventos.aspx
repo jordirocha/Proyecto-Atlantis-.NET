@@ -52,14 +52,15 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                        <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButInsertEvento" />
+                        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="pruebas" />
+                        <asp:Button ID="ButAddEvento" class="btn btn-primary" runat="server" Text="Añadir" OnClick="ButAnyadirEvento" />
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" class="table table-hover" AllowPaging="True" PageSize="2" DataKeyNames="idEvento" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" class="table table-hover" AllowPaging="True" PageSize="6" DataKeyNames="idEvento" DataSourceID="SqlDataSource1">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:BoundField DataField="idEvento" HeaderText="idEvento" InsertVisible="False" ReadOnly="True" SortExpression="idEvento" />
@@ -113,7 +114,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>"
             SelectCommand="EventosUsuario" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:SessionParameter Name="IdUsuario" SessionField="ID" Type="Int32" />
+                <asp:SessionParameter Name="IdUsuario" SessionField="id" Type="Int32" />
                 
             </SelectParameters>
             

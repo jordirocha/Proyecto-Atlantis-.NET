@@ -30,7 +30,7 @@ namespace WebApplication1
               return table;
           }*/
 
-        public void InsertarEvento(string evento, string desc, DateTime fecha, int puntos, string ubicacion, int aforo, byte[] foto, int idUser)
+        public void InsertarEvento(string evento, string desc, DateTime fecha, int puntos, string ubicacion, int aforo, byte[] foto/*, int idUser*/)
         {
             try
             {
@@ -61,8 +61,8 @@ namespace WebApplication1
                 SqlParameter pFoto = new SqlParameter("@foto", foto);
                 cmd.Parameters.Add(pFoto);
 
-                SqlParameter pId = new SqlParameter("@idUsuario", idUser);
-                cmd.Parameters.Add(pId);
+               /* SqlParameter pId = new SqlParameter("@idUsuario", idUser);
+                cmd.Parameters.Add(pId);*/
 
                 cmd.ExecuteNonQuery();
             }
