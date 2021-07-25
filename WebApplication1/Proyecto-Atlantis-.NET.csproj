@@ -110,6 +110,7 @@
     <Content Include="Actividad.aspx" />
     <Content Include="Actividad.css" />
     <Content Include="Evento.aspx" />
+    <Content Include="Evento.css" />
     <Content Include="Nosotros.css" />
     <Content Include="PanelDarPuntos.aspx" />
     <Content Include="Scripts\Actividad.js" />
