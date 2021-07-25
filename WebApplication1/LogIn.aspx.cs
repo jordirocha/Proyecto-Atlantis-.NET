@@ -22,9 +22,9 @@ namespace WebApplication1
                     Session["nombre"] = user.Nombre;
                     Session["rol"] = user.TipoPermiso;
                     Session["puntos"] = user.Puntos;
+                    Session["id"] = user.Id;
                     Response.Redirect("Default.aspx");
                 }
-                
             }
         }
         protected void ButIniciarSesion(object sender, EventArgs e)
@@ -37,6 +37,7 @@ namespace WebApplication1
                 Session["nombre"] = user.Nombre;
                 Session["rol"] = user.TipoPermiso;
                 Session["puntos"] = user.Puntos;
+                Session["id"] = user.Id;
                 if (CheckCookies.Checked)
                 {
                     HttpCookie cookie = new HttpCookie("userInfo");

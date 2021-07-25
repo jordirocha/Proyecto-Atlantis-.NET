@@ -227,7 +227,7 @@
                                     <asp:Image class="sns-btn__icon fab fa-github" ImageUrl="~/Icons/github.png" runat="server" /></a>
                             </section>
                             <div class="p-3">
-                                <p class="copyright">&copy; <%= DateTime.Now.Year%> - ATLANTIS </p>
+                                <p class="copyright">&copy; 2021 - ATLANTIS </p>
                                 <br />
 
                             </div>
