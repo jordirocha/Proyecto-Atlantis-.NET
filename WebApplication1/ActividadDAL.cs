@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 
 namespace WebApplication1
 {
     public class ActividadDAL
     {
-        DbConnection cnx = null;
+        public DbConnection cnx;
 
         public ActividadDAL()
         {
@@ -22,24 +22,29 @@ namespace WebApplication1
             try
             {
                 string sql = @"INSERT INTO Actividad 
-                    (nombre, descripcion, fecha, puntosAdquiridos, ubicacion, aforo)
+                    (nombre, descripcion, fecha, puntosAdquiridos, ubicacion, aforo, imagenActividad)
                     VALUES (@pNombre,
                         @pDescripcion,
                         @pFecha,
                         @pPuntosAdquiridos,
                         @pUbicacion, 
-                        @pAforo)";
+                        @pAforo,
+                        @pImagen)";
                 SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
 
                 SqlParameter pNombre = new SqlParameter("@pNombre", System.Data.SqlDbType.NVarChar, 50);
                 pNombre.Value = act.NombreActividad;
-                SqlParameter pDescripcion = new SqlParameter("@pDescripcion", System.Data.SqlDbType.NVarChar, 50);
+                SqlParameter pDescripcion = new SqlParameter("@pDescripcion", System.Data.SqlDbType.NVarChar, 100);
                 pDescripcion.Value = act.DescripcionActividad;
                 SqlParameter pFecha = new SqlParameter("@pFecha", act.FechaActividad);
                 SqlParameter pPuntosActividad = new SqlParameter("@pPuntosAdquiridos", act.PuntosActividad);
                 SqlParameter pUbicacion = new SqlParameter("@pUbicacion", System.Data.SqlDbType.NVarChar,50);
                 pUbicacion.Value = act.Ubicacionactividad;
                 SqlParameter pAforo = new SqlParameter("@pAforo", act.AforoActividad);
+                SqlParameter pImagen = new SqlParameter("@pImagen", System.Data.SqlDbType.Image);
+                pImagen.Value = act.Imagen;
+                SqlParameter pTituloImagen = new SqlParameter("@pTituloImagen", System.Data.SqlDbType.NVarChar, 100);
+                pTituloImagen.Value = act.TituloImagen;
 
                 cmd.Parameters.Add(pNombre);
                 cmd.Parameters.Add(pDescripcion);
@@ -47,6 +52,8 @@ namespace WebApplication1
                 cmd.Parameters.Add(pPuntosActividad);
                 cmd.Parameters.Add(pUbicacion);
                 cmd.Parameters.Add(pAforo);
+                cmd.Parameters.Add(pImagen);
+                cmd.Parameters.Add(pTituloImagen);
 
                 cmd.ExecuteNonQuery();
                 
@@ -55,6 +62,20 @@ namespace WebApplication1
             {
                 Console.WriteLine("Error en Insert: " + ex.Message);
             }
+        }
+
+        public DataTable SeleccionarEventos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select idActividad as ID, nombre as Actividad," +
+                "ubicacion as Ubicación," +
+                "fecha as Fecha," +
+                "puntosAdquiridos as Puntos," +
+                 "descripcion as Descripcion," +
+                "aforo as Aforo," +
+                "imagenActividad from Actividad", cnx.Conexion);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            return table;
         }
 
         public ActividadCls SelectActividadById(int id)
@@ -95,7 +116,7 @@ namespace WebApplication1
 
             try
             {
-                string sql = "SELECT idActividad, nombre, descripcion, fecha, puntosAdquiridos, ubicacion, aforo  FROM Actividad" +
+                string sql = "SELECT idActividad, nombre, descripcion, fecha, puntosAdquiridos, ubicacion, aforo, imagenActividad  FROM Actividad" +
                     " ORDER BY fecha";
                 SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -111,6 +132,7 @@ namespace WebApplication1
                     act.PuntosActividad = (int)dr["puntosAdquiridos"];
                     act.Ubicacionactividad = (string)dr["ubicacion"];
                     act.AforoActividad = (int)dr["aforo"];
+                    act.Imagen = (byte[])dr["imagenActividad"];
 
                     acts.Add(act);
                 }
@@ -133,23 +155,28 @@ namespace WebApplication1
                              "puntosAdquiridos = @pPuntos," +
                              "ubicacion = @pUbicacion," +
                              "aforo = @Aforo" +
-                             "WHERE idActividad = @pId " ;
+                             "imagenActividad from Actividad" +
+                             "WHERE idActividad = @pId" ;
 
                 SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
                 SqlParameter pId = new SqlParameter("pId", act.IdActividad);
                 SqlParameter pNombre = new SqlParameter("pNombre", System.Data.SqlDbType.NVarChar, 50);
-                SqlParameter pDescripcion = new SqlParameter("pDescripcion", System.Data.SqlDbType.NVarChar, 50);
+                SqlParameter pDescripcion = new SqlParameter("pDescripcion", System.Data.SqlDbType.NVarChar, 100);
                 SqlParameter pFecha = new SqlParameter("pFecha", act.FechaActividad);
                 SqlParameter pPuntos = new SqlParameter("pPuntos", act.PuntosActividad);
                 SqlParameter pUbicacion = new SqlParameter("pUbicacion", System.Data.SqlDbType.NVarChar, 50);
                 SqlParameter pAforo = new SqlParameter("pAforo", act.AforoActividad);
+                SqlParameter pFoto = new SqlParameter("@imagenActividad", act.Imagen);
 
+                
                 cmd.Parameters.Add(pNombre);
                 cmd.Parameters.Add(pDescripcion);
                 cmd.Parameters.Add(pFecha);
                 cmd.Parameters.Add(pPuntos);
                 cmd.Parameters.Add(pUbicacion);
                 cmd.Parameters.Add(pAforo);
+                cmd.Parameters.Add(pFoto);
+                cmd.Parameters.Add(pId);
 
                 pNombre.Value = act.NombreActividad;
                 pDescripcion.Value = act.DescripcionActividad;

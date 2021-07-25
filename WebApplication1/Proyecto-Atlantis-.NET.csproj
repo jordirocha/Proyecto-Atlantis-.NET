@@ -109,7 +109,9 @@
   <ItemGroup>
     <Content Include="Actividad.aspx" />
     <Content Include="Actividad.css" />
+    <Content Include="Evento.aspx" />
     <Content Include="Nosotros.css" />
+    <Content Include="PanelDarPuntos.aspx" />
     <Content Include="Scripts\Actividad.js" />
     <Content Include="Scripts\Registro.js" />
     <Content Include="LogIn.aspx" />
@@ -303,8 +305,17 @@
     <Compile Include="ActividadCls.cs" />
     <Compile Include="ActividadDAL.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="DALEvento.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="DbConnection.cs" />
+    <Compile Include="Evento.aspx.cs">
+      <DependentUpon>Evento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evento.aspx.designer.cs">
+      <DependentUpon>Evento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventoCls.cs" />
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -336,6 +347,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PanelDarPuntos.aspx.cs">
+      <DependentUpon>PanelDarPuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelDarPuntos.aspx.designer.cs">
+      <DependentUpon>PanelDarPuntos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
