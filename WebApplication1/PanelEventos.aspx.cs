@@ -14,8 +14,12 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             // CargarEventos();
-           // SqlDataSource1.SelectParameters["@IdUsu"].DefaultValue = /*Session["id"].ToString();*/ "14";
+            // SqlDataSource1.SelectParameters["@IdUsu"].DefaultValue = /*Session["id"].ToString();*/ "14";
             // GridView1.DataBind();
+            if (Session["rol"] == null || Session["rol"].ToString() != "admin")
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
 
         protected void ButInsertEvento(object sender, EventArgs e)
@@ -33,16 +37,17 @@ namespace WebApplication1
                 int.Parse(TxtPuntos.Text),
                 TxtUbicacion.Text,
                 int.Parse(TxtAforo.Text),
-                bytesFoto);
+                bytesFoto,
+                int.Parse(Session["id"].ToString()));
 
             Response.Redirect("PanelEventos.aspx");
         }
 
-        public void CargarEventos()
+        /*public void CargarEventos()
         {
             DALEvento eventos = new DALEvento();
             GridView1.DataSource = eventos.SeleccionarEventos();
             GridView1.DataBind();
-        }
+        }*/
     }
 }
