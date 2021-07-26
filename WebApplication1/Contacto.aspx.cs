@@ -27,7 +27,7 @@ namespace WebApplication1
                 TxtFormEnviado2.Text = "No has completado todos los campos. Inténtalo de nuevo.";
             }
             else
-                TxtFormEnviado.Text = "Formulario enviado con éxito!";
+                TxtFormEnviado.Text = "¡Formulario enviado con éxito!";
   
         }
 
@@ -36,7 +36,7 @@ namespace WebApplication1
             TxtSuscripcionEnviada.Text = "";
             TxtSuscripcionEnviada2.Text = "";
             if (!string.IsNullOrEmpty(TextEmail2.Text))
-                TxtSuscripcionEnviada.Text = "Suscripción realizada!";
+                TxtSuscripcionEnviada.Text = "¡Suscripción realizada!";
             else
                 TxtSuscripcionEnviada2.Text = "Ingresa un email válido.";
         }

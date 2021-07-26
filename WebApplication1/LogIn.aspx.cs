@@ -12,14 +12,19 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie checkCookie = Request.Cookies["userInfo"];
+            DALUsuario dalUser = new DALUsuario();
+            
             if (checkCookie != null)
             {
-
-                DALUsuario dalUser = new DALUsuario();
-                Usuario user = dalUser.VerificarUsuario(checkCookie["email"]);
-                Session["nombre"] = user.Nombre;
-                Session["rol"] = user.TipoPermiso;
-                Response.Redirect("Default.aspx");
+                if (dalUser.InciarSesionCookies(checkCookie["email"], checkCookie["pass"]))
+                {
+                    Usuario user = dalUser.VerificarUsuario(checkCookie["email"]);
+                    Session["nombre"] = user.Nombre;
+                    Session["rol"] = user.TipoPermiso;
+                    Session["puntos"] = user.Puntos;
+                    Session["id"] = user.Id;
+                    Response.Redirect("Default.aspx");
+                }
             }
         }
         protected void ButIniciarSesion(object sender, EventArgs e)
@@ -31,11 +36,13 @@ namespace WebApplication1
                 Usuario user = dalUser.VerificarUsuario(TextEmail.Text);
                 Session["nombre"] = user.Nombre;
                 Session["rol"] = user.TipoPermiso;
+                Session["puntos"] = user.Puntos;
+                Session["id"] = user.Id;
                 if (CheckCookies.Checked)
                 {
                     HttpCookie cookie = new HttpCookie("userInfo");
                     cookie["email"] = TextEmail.Text;
-                    cookie["pass"] = TextPass.Text;
+                    cookie["pass"] = user.Contrasenya;
                     cookie.Expires = DateTime.Now.AddDays(1);
                     Response.Cookies.Add(cookie);
                 }
