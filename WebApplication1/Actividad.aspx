@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Actividades" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Actividad.aspx.cs" Inherits="WebApplication1.Actividad" %>
+﻿<%@ Page Title="Actividades" Language="C#" MasterPageFile="~/Site.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Actividad.aspx.cs" Inherits="WebApplication1.Actividad" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="Actividad.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,9 @@
                             <div class="day">
                                 <asp:Label ID="lbFecha" runat="server" Text='<%#Eval("FechaActividad","{0:dd/MM/yyyy}") %>'></asp:Label>
                             </div>
-                        </div><img src="/Imagenes/playa1.jpg" />
+                        </div>
+                        <!--<img src="/Imagenes/playa1.jpg" />-->
+                        <asp:Image ID="Image1" class="imagenevento" runat="server" ImageUrl='<%#"data:Image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Imagen")) %>'/>
                     </div>
                     <!-- Post Content-->
                     <div class="post-content">
@@ -38,13 +40,17 @@
                             <asp:Label ID="lbAforoCantidad" runat="server" Text='<%#Eval("AforoActividad") %>'></asp:Label>
                         </span>
                         <span class="comments">
-                            <a class="apuntarme" href="#">Apuntarme</a></span></div>
+                            <a class="apuntarme" href="#">Apuntarme</a></span>
+                            <asp:LinkButton runat="server" Text="GetIndex" OnClick="Button1_Click" ID="lnkGetIndex"></asp:LinkButton>
+                        </div>
+                        
                     </div>
                 </div>
             </div>                         
         </div>
     </ItemTemplate>
     </asp:Repeater>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div>
 
 </asp:Content>

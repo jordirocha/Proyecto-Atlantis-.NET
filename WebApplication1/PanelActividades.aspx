@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PanelActividades.aspx.cs" Inherits="WebApplication1.PanelActividades" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h1 style="text-align: center">Gestión de actividades</h1>
@@ -53,10 +54,11 @@
             </div>
         </div>
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="idActividad" DataSourceID="SqlDataSource1" OnRowDeleting="ActividadEliminada" AllowPaging="True" PageSize="5" class="table table-hover">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" ForeColor="Black" DataKeyNames="idActividad" DataSourceID="SqlDataSource1" OnRowDeleting="ActividadEliminada" AllowPaging="True" PageSize="3" class="table table-hover">
+            <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:BoundField DataField="idActividad" HeaderText="idActividad" InsertVisible="False" ReadOnly="True" SortExpression="idActividad" />
-              <asp:TemplateField>
+                <asp:TemplateField>
                     <ItemTemplate>
                         <div class="container-fluid">
                             <div class="row">
@@ -90,7 +92,9 @@
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  />
+                <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar">
+                    <ControlStyle CssClass="btn btn-danger"></ControlStyle>
+                </asp:CommandField>
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>" DeleteCommand="BorrarActividad" DeleteCommandType="StoredProcedure" SelectCommand="ActividadesUsuario" SelectCommandType="StoredProcedure">
@@ -101,6 +105,6 @@
                 <asp:SessionParameter DefaultValue="0" Name="IdUsuario" SessionField="id" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
-      
+
     </div>
 </asp:Content>

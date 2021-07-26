@@ -16,5 +16,12 @@ namespace WebApplication1
             repPosts.DataSource = acts;
             repPosts.DataBind();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string id = (((sender as LinkButton).NamingContainer as RepeaterItem).FindControl("lbFecha") as Label).Text;
+
+        }
+
     }
 }
