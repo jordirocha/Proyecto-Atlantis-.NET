@@ -115,7 +115,7 @@
                                     else if (Session["rol"].ToString() == "ong")
                                     { %>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="PanelEventos.aspx">Administrar actividades</a></li>
+                                    <li><a class="dropdown-item" href="PanelActividades.aspx">Administrar actividades</a></li>
 
                                 </ul>
                                  <% } %>

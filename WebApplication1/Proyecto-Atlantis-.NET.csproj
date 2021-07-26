@@ -111,6 +111,7 @@
     <Content Include="Actividad.css" />
     <Content Include="Evento.aspx" />
     <Content Include="Evento.css" />
+    <Content Include="PanelActividades.aspx" />
     <Content Include="PanelEventos.aspx" />
     <Content Include="Nosotros.css" />
     <Content Include="Scripts\Actividad.js" />
@@ -314,6 +315,13 @@
       <DependentUpon>Evento.aspx</DependentUpon>
     </Compile>
     <Compile Include="EventoCls.cs" />
+    <Compile Include="PanelActividades.aspx.cs">
+      <DependentUpon>PanelActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelActividades.aspx.designer.cs">
+      <DependentUpon>PanelActividades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PanelEventos.aspx.cs">
       <DependentUpon>PanelEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

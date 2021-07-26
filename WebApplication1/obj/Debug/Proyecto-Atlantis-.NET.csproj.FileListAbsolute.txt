@@ -373,7 +373,6 @@ C:\Users\Jordi\Pictures\Git\WebApplication1\bin\Microsoft.AspNet.FriendlyUrls.xm
 C:\Users\Jordi\Pictures\Git\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Jordi\Pictures\Git\WebApplication1\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Jordi\Pictures\Git\WebApplication1\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.AssemblyReference.cache
 C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.CoreCompileInputs.cache
 C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.CopyComplete
 C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\WebApplication1.dll
