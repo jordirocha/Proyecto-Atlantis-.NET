@@ -38,7 +38,7 @@ namespace WebApplication1
                 pDescripcion.Value = act.DescripcionActividad;
                 SqlParameter pFecha = new SqlParameter("@pFecha", act.FechaActividad);
                 SqlParameter pPuntosActividad = new SqlParameter("@pPuntosAdquiridos", act.PuntosActividad);
-                SqlParameter pUbicacion = new SqlParameter("@pUbicacion", System.Data.SqlDbType.NVarChar,50);
+                SqlParameter pUbicacion = new SqlParameter("@pUbicacion", System.Data.SqlDbType.NVarChar, 50);
                 pUbicacion.Value = act.Ubicacionactividad;
                 SqlParameter pAforo = new SqlParameter("@pAforo", act.AforoActividad);
                 SqlParameter pImagen = new SqlParameter("@pImagen", System.Data.SqlDbType.Image);
@@ -56,7 +56,7 @@ namespace WebApplication1
                 cmd.Parameters.Add(pTituloImagen);
 
                 cmd.ExecuteNonQuery();
-                
+
             }
             catch (Exception ex)
             {
@@ -109,7 +109,7 @@ namespace WebApplication1
             }
             return act;
         }
-        public List<ActividadCls> SelectActividad() 
+        public List<ActividadCls> SelectActividad()
         {
             List<ActividadCls> acts = new List<ActividadCls>();
             ActividadCls act;
@@ -121,10 +121,10 @@ namespace WebApplication1
                 SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                while (dr.Read()) 
+                while (dr.Read())
                 {
                     act = new ActividadCls();
-                    
+
                     act.IdActividad = (int)dr["idActividad"];
                     act.NombreActividad = (string)dr["nombre"];
                     act.DescripcionActividad = (string)dr["descripcion"];
@@ -156,7 +156,7 @@ namespace WebApplication1
                              "ubicacion = @pUbicacion," +
                              "aforo = @Aforo" +
                              "imagenActividad from Actividad" +
-                             "WHERE idActividad = @pId" ;
+                             "WHERE idActividad = @pId";
 
                 SqlCommand cmd = new SqlCommand(sql, cnx.Conexion);
                 SqlParameter pId = new SqlParameter("pId", act.IdActividad);
@@ -168,7 +168,7 @@ namespace WebApplication1
                 SqlParameter pAforo = new SqlParameter("pAforo", act.AforoActividad);
                 SqlParameter pFoto = new SqlParameter("@imagenActividad", act.Imagen);
 
-                
+
                 cmd.Parameters.Add(pNombre);
                 cmd.Parameters.Add(pDescripcion);
                 cmd.Parameters.Add(pFecha);
@@ -205,7 +205,7 @@ namespace WebApplication1
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
-            { 
+            {
             }
         }
 
@@ -253,6 +253,27 @@ namespace WebApplication1
 
 
         }
+        public void ConcederPuntosUsuario(int idUsuario, int puntos)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ConcederPuntosUsuario", cnx.Conexion);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                SqlParameter pNombre = new SqlParameter("@idUser", idUsuario);
+                cmd.Parameters.Add(pNombre);
+
+                SqlParameter pPuntos = new SqlParameter("@puntosAct", puntos);
+                cmd.Parameters.Add(pPuntos);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                // throw;
+            }
+        }
     }
 }

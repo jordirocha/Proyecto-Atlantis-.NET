@@ -377,3 +377,4 @@ C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csp
 C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.CopyComplete
 C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Jordi\Pictures\Git\WebApplication1\obj\Debug\Proyecto-Atlantis-.NET.csproj.AssemblyReference.cache

@@ -90,7 +90,7 @@
                       {%>
                         <%if (Session["rol"].ToString() == "user")
                             {%>
-                        <li id="puntos" style="list-style: none; color: #000000;">Puntos: <%= Session["puntos"].ToString() %> </li>
+                        <li id="puntos" style="list-style: none; color: #000000;">Puntos:  <asp:Label ID="TextPuntos" runat="server" Text=""></asp:Label> </li>
                         <% } %>
 
                         <ul class="navbar-nav">
@@ -116,7 +116,7 @@
                                     { %>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="PanelActividades.aspx">Administrar actividades</a></li>
-
+                                     <li><a class="dropdown-item" href="PanelDarPuntos.aspx">Conceder puntos</a></li>
                                 </ul>
                                  <% } %>
 

@@ -138,5 +138,18 @@ namespace WebApplication1
             return cadena_descifrada;
         }
 
+        public int MostrarPuntosUsuario(int id)
+        {
+            string sql = @"Select  puntosActuales FROM Usuario where idUsuario = @idUser";
+
+            SqlCommand cmd = new SqlCommand(sql, conn.Conexion);
+
+            SqlParameter idUsuario = new SqlParameter("@idUser", id);
+            cmd.Parameters.Add(idUsuario);
+            int puntos = (int)cmd.ExecuteScalar();
+
+            return puntos;
+        }
+
     }
 }
