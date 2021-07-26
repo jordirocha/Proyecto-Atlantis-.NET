@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PanelDarPuntos.aspx.cs" Inherits="WebApplication1.PanelDarPuntos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="FilaSeleccionada">
+        <br />
+        <h1 style="text-align:center">Gestion de puntos de actividades</h1><br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None"
+            OnSelectedIndexChanged="FilaSeleccionada" class="table table-hover">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="IdUsuario" HeaderText="ID usuario" InsertVisible="False" ReadOnly="True" SortExpression="IdUsuario" />
@@ -10,7 +13,7 @@
                 <asp:BoundField DataField="idActividad" HeaderText="ID Actividad" InsertVisible="False" ReadOnly="True" SortExpression="idActividad" />
                 <asp:BoundField DataField="nombre1" HeaderText="Actividad" SortExpression="nombre1" />
                 <asp:BoundField DataField="puntosAdquiridos" HeaderText="Puntos actividad" SortExpression="puntosAdquiridos" />
-                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Conceder" ShowHeader="True" Text="Conceder puntos" />
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Conceder" ShowHeader="True" Text="Conceder puntos" ControlStyle-CssClass="btn btn-success" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
