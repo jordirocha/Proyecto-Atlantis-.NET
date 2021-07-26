@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PanelEventos.aspx.cs" Inherits="WebApplication1.Content.PanelEventos" %>
+﻿<%@ Page Title="Panel Eventos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PanelEventos.aspx.cs" Inherits="WebApplication1.Content.PanelEventos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Fecha</label>
-                                <asp:TextBox ID="TxtFechaEvento" class="form-label" TextMode="DateTimeLocal" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TxtFechaEvento" class="form-label" TextMode="Date" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="exampleFormControlInput1" class="form-label">Puntos requeridos</label>

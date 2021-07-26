@@ -26,7 +26,7 @@ namespace WebApplication1.Content
             byte[] bytesFoto = binaryReader.ReadBytes((int)stream.Length);
 
             DALEvento evento = new DALEvento();
-
+            
             evento.InsertarEvento(TxtNomEvento.Text,
                 TxtDesc.Text,
                 DateTime.Parse(TxtFechaEvento.Text),

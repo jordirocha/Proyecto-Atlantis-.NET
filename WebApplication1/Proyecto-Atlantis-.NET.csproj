@@ -109,6 +109,8 @@
   <ItemGroup>
     <Content Include="Actividad.aspx" />
     <Content Include="Actividad.css" />
+    <Content Include="Evento.aspx" />
+    <Content Include="Evento.css" />
     <Content Include="PanelEventos.aspx" />
     <Content Include="Nosotros.css" />
     <Content Include="Scripts\Actividad.js" />
@@ -304,6 +306,14 @@
     <Compile Include="ActividadCls.cs" />
     <Compile Include="ActividadDAL.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Evento.aspx.cs">
+      <DependentUpon>Evento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evento.aspx.designer.cs">
+      <DependentUpon>Evento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventoCls.cs" />
     <Compile Include="PanelEventos.aspx.cs">
       <DependentUpon>PanelEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

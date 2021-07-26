@@ -14,7 +14,7 @@ namespace WebApplication1
 
         }
 
-        protected void ButCerrarSesion(object sender, EventArgs e)
+        public void ButCerrarSesion(object sender, EventArgs e)
         {
             Session.RemoveAll();
             if (Request.Cookies["userInfo"] != null)
