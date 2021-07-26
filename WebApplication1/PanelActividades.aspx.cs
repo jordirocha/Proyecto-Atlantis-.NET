@@ -18,11 +18,11 @@ namespace WebApplication1
             }
         }
 
-        protected void ActivdadEliminado(object sender, GridViewDeleteEventArgs e)
+   /*     protected void ActivdadEliminado(object sender, GridViewDeleteEventArgs e)
         {
             int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
         }
-
+   */
         protected void ButAnyadirNuevoAct(object sender, EventArgs e)
         {
             HttpPostedFile postedFile = FotoAct.PostedFile;
@@ -42,6 +42,11 @@ namespace WebApplication1
                 int.Parse(Session["id"].ToString()));
 
             Response.Redirect("PanelActividades.aspx");
+        }
+
+        protected void ActividadEliminada(object sender, GridViewDeleteEventArgs e)
+        {
+            int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
         }
     }
 }

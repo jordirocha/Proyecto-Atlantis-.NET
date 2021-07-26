@@ -53,14 +53,10 @@
             </div>
         </div>
 
-        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
-            BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical"
-            AutoGenerateColumns="False" class="table table-hover" AllowPaging="True"
-            PageSize="4" DataKeyNames="idActividad" DataSourceID="SqlDataSource1" OnRowDeleting="ActivdadEliminado">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="idActividad" DataSourceID="SqlDataSource1" OnRowDeleting="ActividadEliminada" AllowPaging="True" PageSize="5" class="table table-hover">
             <Columns>
-                <asp:BoundField DataField="idActividad" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="idEvento" />
-                <asp:TemplateField>
+                <asp:BoundField DataField="idActividad" HeaderText="idActividad" InsertVisible="False" ReadOnly="True" SortExpression="idActividad" />
+              <asp:TemplateField>
                     <ItemTemplate>
                         <div class="container-fluid">
                             <div class="row">
@@ -94,29 +90,17 @@
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
-
-                <asp:CommandField ButtonType="Button" ControlStyle-CssClass="btn btn-danger" ShowDeleteButton="true" />
-
-
-
+                <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  />
             </Columns>
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#808080" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>" DeleteCommand="BorrarActividad" DeleteCommandType="StoredProcedure" SelectCommand="ActividadesUsuario" SelectCommandType="StoredProcedure">
             <DeleteParameters>
-                <asp:Parameter Name="IdActivdad" Type="Int32" />
+                <asp:Parameter Name="idActividad" Type="Int32" />
             </DeleteParameters>
             <SelectParameters>
                 <asp:SessionParameter DefaultValue="0" Name="IdUsuario" SessionField="id" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
+      
     </div>
 </asp:Content>
