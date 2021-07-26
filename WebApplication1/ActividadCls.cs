@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
 
 
 namespace WebApplication1
@@ -20,8 +21,11 @@ namespace WebApplication1
         private string ubicacionactividad;
         private int puntosActividad;
         private int aforoActividad;
+        private byte[] imagen;
+        private string tituloImagen;
 
-        public ActividadCls(int idActividad, string nombreActividad, string descripcionActividad, DateTime fechaActividad, string ubicacionactividad, int puntosActividad, int aforoActividad)
+        public ActividadCls(int idActividad, string nombreActividad, string descripcionActividad, DateTime fechaActividad, 
+                            string ubicacionactividad, int puntosActividad, int aforoActividad, byte[] imagen, string tituloImagen)
         {
             this.idActividad = idActividad;
             this.nombreActividad = nombreActividad;
@@ -30,6 +34,8 @@ namespace WebApplication1
             this.ubicacionactividad = ubicacionactividad;
             this.puntosActividad = puntosActividad;
             this.aforoActividad = aforoActividad;
+            this.imagen = imagen;
+            this.tituloImagen = tituloImagen;
         }
 
         public ActividadCls()
@@ -70,6 +76,18 @@ namespace WebApplication1
         {
             set { aforoActividad = value; }
             get { return aforoActividad; }
+        }
+
+        public byte[] Imagen
+        {
+            set { imagen = value; }
+            get { return imagen; }
+        }
+
+        public string TituloImagen
+        {
+            set { tituloImagen = value; }
+            get { return tituloImagen; }
         }
 
     }

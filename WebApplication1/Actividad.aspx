@@ -14,7 +14,7 @@
                     <div class="thumbnail">
                         <div class="date">
                             <div class="day">
-                                <asp:Label ID="lbFecha" runat="server" Text='<%#Eval("FechaActividad") %>'></asp:Label>
+                                <asp:Label ID="lbFecha" runat="server" Text='<%#Eval("FechaActividad","{0:dd/MM/yyyy}") %>'></asp:Label>
                             </div>
                         </div><img src="/Imagenes/playa1.jpg" />
                     </div>
