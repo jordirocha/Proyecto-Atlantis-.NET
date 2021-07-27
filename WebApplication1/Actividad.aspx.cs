@@ -23,7 +23,7 @@ namespace WebApplication1
 
         protected void btnApuntarse_Click(object sender, EventArgs e)
         {
-            if (Session["rol"] != null && Session["user"].ToString() == "user")
+            if (Session["rol"] != null && Session["rol"].ToString() == "user")
             {
                 int idUsuario = Int32.Parse(Session["id"].ToString());
                 int idActividad = Int32.Parse((((sender as LinkButton).NamingContainer as RepeaterItem).FindControl("lbIdActividad") as Label).Text);

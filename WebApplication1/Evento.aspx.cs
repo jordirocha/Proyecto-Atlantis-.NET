@@ -46,11 +46,21 @@ namespace WebApplication1
                     if (ev.usuarioPuntosEvento(idEvento, idUsuario) == true)
                     {
                         int puntos = Int32.Parse((((sender as LinkButton).NamingContainer as RepeaterItem).FindControl("lbPuntosCantidad") as Label).Text);
-                        ev.usuarioApuntarse(idEvento, idUsuario, DateTime.Now);
-                        lbRegistrado.Visible = true;
-                        lbApuntado.Visible = false;
-                        lbPuntosInsuficientes.Visible = false;
-                        RestarPuntosUsuario(idUsuario,puntos);
+                        DALUsuario userPuntos = new DALUsuario();
+                        int pnts = userPuntos.MostrarPuntosUsuario(int.Parse(Session["id"].ToString()));
+                        if (pnts > puntos)
+                        {
+                            ev.usuarioApuntarse(idEvento, idUsuario, DateTime.Now);
+                            lbRegistrado.Visible = true;
+                            lbApuntado.Visible = false;
+                            lbPuntosInsuficientes.Visible = false;
+                            RestarPuntosUsuario(idUsuario, puntos);
+                        }
+                        /* ev.usuarioApuntarse(idEvento, idUsuario, DateTime.Now);
+                         lbRegistrado.Visible = true;
+                         lbApuntado.Visible = false;
+                         lbPuntosInsuficientes.Visible = false;
+                         RestarPuntosUsuario(idUsuario,puntos);*/
                         Response.Redirect("Evento.aspx");
                     }
                     else
@@ -65,11 +75,11 @@ namespace WebApplication1
         public void RestarPuntosUsuario(int id, int puntos)
         {
             DALUsuario userPuntos = new DALUsuario();
-            // int pnts = userPuntos.MostrarPuntosUsuario(int.Parse(Session["id"].ToString()));
-            /*if (pnts > puntos)
+          /*   int pnts = userPuntos.MostrarPuntosUsuario(int.Parse(Session["id"].ToString()));
+            if (pnts >= puntos)
             {*/
                 userPuntos.RestarPuntosUsuario(id,puntos);
-            //}
+           // }
         }
 
     }
