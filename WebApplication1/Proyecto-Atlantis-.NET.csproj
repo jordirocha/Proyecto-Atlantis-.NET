@@ -109,8 +109,10 @@
   <ItemGroup>
     <Content Include="Actividad.aspx" />
     <Content Include="Actividad.css" />
+    <Content Include="ActividadesInscritos.aspx" />
     <Content Include="Evento.aspx" />
     <Content Include="Evento.css" />
+    <Content Include="EventosInscritos.aspx" />
     <Content Include="PanelActividades.aspx" />
     <Content Include="PanelDarPuntos.aspx" />
     <Content Include="PanelEventos.aspx" />
@@ -307,6 +309,13 @@
     </Compile>
     <Compile Include="ActividadCls.cs" />
     <Compile Include="ActividadDAL.cs" />
+    <Compile Include="ActividadesInscritos.aspx.cs">
+      <DependentUpon>ActividadesInscritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActividadesInscritos.aspx.designer.cs">
+      <DependentUpon>ActividadesInscritos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Evento.aspx.cs">
       <DependentUpon>Evento.aspx</DependentUpon>
@@ -316,6 +325,13 @@
       <DependentUpon>Evento.aspx</DependentUpon>
     </Compile>
     <Compile Include="EventoCls.cs" />
+    <Compile Include="EventosInscritos.aspx.cs">
+      <DependentUpon>EventosInscritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventosInscritos.aspx.designer.cs">
+      <DependentUpon>EventosInscritos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PanelActividades.aspx.cs">
       <DependentUpon>PanelActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

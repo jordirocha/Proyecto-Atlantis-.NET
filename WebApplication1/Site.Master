@@ -101,8 +101,8 @@
                                 <% if (Session["rol"].ToString() == "user")
                                     { %>
                                 <ul class="dropdown-menu col-4" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Eventos inscritos</a></li>
-                                    <li><a class="dropdown-item" href="#">Actividades inscritos</a></li>
+                                    <li><a class="dropdown-item" href="EventosInscritos.aspx">Eventos inscritos</a></li>
+                                    <li><a class="dropdown-item" href="ActividadesInscritos.aspx">Actividades inscritos</a></li>
                                 </ul>
                                 <%   }
                                     else if (Session["rol"].ToString() == "admin")
