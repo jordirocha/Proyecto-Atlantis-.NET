@@ -11,7 +11,10 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["rol"] == null || Session["rol"].ToString() != "user")
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }
