@@ -54,6 +54,29 @@ namespace WebApplication1
             return false;
         }
 
+        internal void CancelarActividad(int id, string actividad)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SalirActividad", conn.Conexion);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter pId = new SqlParameter("@idUser", id);
+                cmd.Parameters.Add(pId);
+
+                SqlParameter pAct = new SqlParameter("@nombreAct", System.Data.SqlDbType.VarChar);
+                pAct.Value = actividad;
+                cmd.Parameters.Add(pAct);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                //  throw;
+            }
+        }
+
         public bool InciarSesionCookies(string email, string passEncriptado)
         {
             string contrasenya = "";
@@ -149,6 +172,29 @@ namespace WebApplication1
             int puntos = (int)cmd.ExecuteScalar();
 
             return puntos;
+        }
+
+        public void CancelarEvento(int id, string evento)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SalirEvento", conn.Conexion);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter pId = new SqlParameter("@idUser", id);
+                cmd.Parameters.Add(pId);
+
+                SqlParameter pEvento = new SqlParameter("@nombreEvento", System.Data.SqlDbType.VarChar);
+                pEvento.Value = evento;
+                cmd.Parameters.Add(pEvento);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+              //  throw;
+            }
         }
 
     }

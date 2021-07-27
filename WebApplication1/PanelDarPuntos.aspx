@@ -29,7 +29,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AtlantisConnectionString %>" SelectCommand="ListarUserActividad" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:SessionParameter DefaultValue="0" Name="IdUser" SessionField="id" Type="Int32" />
+                <asp:SessionParameter DefaultValue="0" Name="IdUsuario" SessionField="id" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>

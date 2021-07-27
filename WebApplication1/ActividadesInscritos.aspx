@@ -4,11 +4,12 @@
          <br />
          <h1 style="text-align:center">Acticidades inscritos</h1>
          <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" class="table table-hover" >
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" class="table table-hover" OnSelectedIndexChanged="CancelarActividad" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Actividad" SortExpression="nombre" />
                 <asp:BoundField DataField="fechaInscripcion" HeaderText="Fecha inscripción" SortExpression="fechaInscripcion" />
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Cancelar" ShowHeader="True" Text="Cancelar" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
