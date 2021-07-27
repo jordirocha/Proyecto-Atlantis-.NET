@@ -39,8 +39,9 @@
                                     <span class="timestamp">
                                         <i>Aforo: </i>
                                         <asp:Label ID="lbAforoCantidad" runat="server" Text='<%#Eval("AforoActividad") %>'></asp:Label>
-                                        <h6><asp:Label ID="lbIdActividad" runat="server" Visible="false" Text='<%#Eval("IdActividad") %>'>
-                                        </asp:Label></h6>
+                                        <h6>
+                                            <asp:Label ID="lbIdActividad" runat="server" Visible="false" Text='<%#Eval("IdActividad") %>'>
+                                            </asp:Label></h6>
                                     </span>
                                     <span class="comments">
                                         <a class="apuntarme" href="#">
@@ -59,7 +60,7 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <!-- <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>-->
     </div>
 
 </asp:Content>
