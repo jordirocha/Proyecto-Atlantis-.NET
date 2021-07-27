@@ -197,5 +197,20 @@ namespace WebApplication1
             }
         }
 
+        public void RestarPuntosUsuario(int id, int puntos)
+        {
+            SqlCommand cmd = new SqlCommand("RestarPuntosUsuario", conn.Conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter pId = new SqlParameter("@idUser", id);
+            cmd.Parameters.Add(pId);
+
+            SqlParameter pPuntos = new SqlParameter("@puntosEvt", puntos);
+            cmd.Parameters.Add(pPuntos);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
     }
 }

@@ -19,7 +19,7 @@ namespace WebApplication1
 
         protected void CancelarEvento(object sender, EventArgs e)
         {
-         //   var id = int.Parse(GridView1.SelectedRow.Cells[0].Text);
+            // var id = int.Parse(GridView1.SelectedRow.Cells[0].Text);
             var puntos = GridView1.SelectedRow.Cells[0].Text;
             int id = int.Parse(Session["id"].ToString());
             DALUsuario usu = new DALUsuario();

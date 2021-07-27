@@ -307,6 +307,51 @@ namespace WebApplication1
 
         }
 
+        public void InsertarEvento(string actividad, string desc, DateTime fecha, int puntos, string ubicacion, int aforo, byte[] foto, int idUser)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("insertarActividad", cnx.Conexion);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter pNombre = new SqlParameter("@nombre", System.Data.SqlDbType.VarChar, 100);
+                pNombre.Value = actividad;
+                cmd.Parameters.Add(pNombre);
+
+                SqlParameter pDesc = new SqlParameter("@descripcion", System.Data.SqlDbType.VarChar);
+                pDesc.Value = desc;
+                cmd.Parameters.Add(pDesc);
+
+                SqlParameter pfecha = new SqlParameter("@fecha", fecha);
+                cmd.Parameters.Add(pfecha);
+
+                SqlParameter pPuntos = new SqlParameter("@puntosAdquiridos", puntos);
+                cmd.Parameters.Add(pPuntos);
+
+                SqlParameter pUbicacion = new SqlParameter("@ubicacion", System.Data.SqlDbType.VarChar, 100);
+                pUbicacion.Value = ubicacion;
+                cmd.Parameters.Add(pUbicacion);
+
+                SqlParameter pAforo = new SqlParameter("@aforo", aforo);
+                cmd.Parameters.Add(pAforo);
+
+                SqlParameter pFoto = new SqlParameter("@imagenActividad", foto);
+                cmd.Parameters.Add(pFoto);
+
+                SqlParameter pId = new SqlParameter("@idOng", idUser);
+                cmd.Parameters.Add(pId);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                // throw;
+            }
+
+
+        }
+
 
     }
 }
