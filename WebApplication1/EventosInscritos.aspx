@@ -4,11 +4,12 @@
          <br />
          <h1 style="text-align:center">Eventos inscritos</h1>
          <br />
-         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None"  class="table table-hover" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None"  class="table table-hover" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="CancelarEvento">
              <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
              <Columns>
                  <asp:BoundField DataField="nombre" HeaderText="Evento" SortExpression="nombre" />
                  <asp:BoundField DataField="fechaInscripcion" HeaderText="Fecha inscripción" SortExpression="fechaInscripcion" />
+                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Cancelar" ShowHeader="True" Text="Cancelar" />
              </Columns>
              <EditRowStyle BackColor="#999999" />
              <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

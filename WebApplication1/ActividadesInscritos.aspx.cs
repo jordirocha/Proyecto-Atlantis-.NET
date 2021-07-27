@@ -16,5 +16,14 @@ namespace WebApplication1
                 Response.Redirect("Default.aspx");
             }
         }
+
+        protected void CancelarActividad(object sender, EventArgs e)
+        {
+            var puntos = GridView1.SelectedRow.Cells[0].Text;
+            int id = int.Parse(Session["id"].ToString());
+            DALUsuario usu = new DALUsuario();
+            usu.CancelarActividad(id, puntos);
+            Response.Redirect("ActividadesInscritos.aspx");
+        }
     }
 }
