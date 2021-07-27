@@ -51,6 +51,7 @@ namespace WebApplication1
                         lbApuntado.Visible = false;
                         lbPuntosInsuficientes.Visible = false;
                         RestarPuntosUsuario(idUsuario,puntos);
+                        Response.Redirect("Evento.aspx");
                     }
                     else
                     {
