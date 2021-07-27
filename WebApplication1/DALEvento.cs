@@ -108,6 +108,64 @@ namespace WebApplication1
 
             
         }
+        public bool usuarioApuntadoEvento(int idActividad, int idUsuario)
+        {
+            bool apuntado = false;
+
+            string query = "Select FkIdEvento, FkIdUsuario " +
+                "FROM AccedeEvento " +
+                "WHERE FkIdEvento=@idEvento AND FkIdUsuario=@idUsuario";
+            SqlCommand cmd = new SqlCommand(query, con.Conexion);
+            cmd.Parameters.AddWithValue("@idEvento", idActividad);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+            apuntado = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+
+            return apuntado;
+        }
+
+        public bool usuarioPuntosEvento(int idEvento, int idUsuario)
+        {
+            string query = "Select puntosActuales " +
+                "FROM Usuario " +
+                "WHERE idUsuario = @idUsuario";
+            SqlCommand cmd = new SqlCommand(query, con.Conexion);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+            int puntosUser = cmd.ExecuteNonQuery();
+
+            string query2 = "Select puntosRequeridos " +
+               "FROM Evento " +
+               "WHERE idEvento = @idEvento";
+            SqlCommand cmd2 = new SqlCommand(query2, con.Conexion);
+            cmd2.Parameters.AddWithValue("@idEvento", idEvento);
+
+            int puntosRequeridos = cmd2.ExecuteNonQuery();
+
+            if (puntosUser >= puntosRequeridos)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void usuarioApuntarse(int idEvento, int idUsuario, DateTime fecha)
+        {
+
+            string query = "Insert into AccedeEvento " +
+                "values(@idEvento,@idUsuario,@fecha)";
+
+            SqlCommand cmd = new SqlCommand(query, con.Conexion);
+            cmd.Parameters.AddWithValue("@idEvento", idEvento);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            cmd.Parameters.AddWithValue("@fecha", fecha);
+
+            cmd.ExecuteNonQuery();
+
+        }
 
     }
 }

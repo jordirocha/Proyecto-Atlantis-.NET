@@ -37,9 +37,22 @@
                                     <span class="timestamp">
                                     <i>Aforo: </i>
                                         <asp:Label ID="lbAforoCantidad" runat="server" Text='<%#Eval("Aforo") %>'></asp:Label>
+                                        <h6><asp:Label ID="lbIdEvento" runat="server" Visible="false" Text='<%#Eval("idEvento") %>'>
+                                        </asp:Label></h6>
                                     </span>
                                     <span class="comments">
-                                        <a class="apuntarme" href="#">Apuntarme</a></span>
+                                        <a class="apuntarme" href="#">
+                                            <asp:LinkButton ID="btnApuntarse" runat="server" Text="Apuntarse" OnClick="btnApuntarse_Click" />
+                                        </h6>
+                                <h6>
+                                    <asp:Label ID="lbApuntado" runat="server" Visible="false" Text="Ya te has apuntado a este evento"></asp:Label></h6>
+                                            <h6>
+                                                <asp:Label ID="lbRegistrado" runat="server" Visible="false" Text="Registrado en el evento">
+                                                </asp:Label></h6>
+                                            <h6>
+                                                <asp:Label ID="lbPuntosInsuficientes" runat="server" Visible="false" Text="Puntos insuficientes">
+                                                </asp:Label></h6>
+                                        </a></span>
                                 </div>
                             </div>
                         </div>

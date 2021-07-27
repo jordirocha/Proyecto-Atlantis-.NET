@@ -209,7 +209,7 @@ namespace WebApplication1
             }
         }
 
-        public void InsertarEvento(string actividad, string desc, DateTime fecha, int puntos, string ubicacion, int aforo, byte[] foto, int idUser)
+        public void InsertarActividad(string actividad, string desc, DateTime fecha, int puntos, string ubicacion, int aforo, byte[] foto, int idUser)
         {
             try
             {
@@ -275,5 +275,38 @@ namespace WebApplication1
                 // throw;
             }
         }
+
+        public bool usuarioApuntadoActividad(int idActividad, int idUsuario)
+        {
+            bool apuntado = false;
+
+            string query = "Select FkIdActividad, FkIdUsuario " +
+                "FROM AccedeActividad " +
+                "WHERE FkIdActividad=@idActividad AND FkIdUsuario=@idUsuario";
+            SqlCommand cmd = new SqlCommand(query, cnx.Conexion);
+            cmd.Parameters.AddWithValue("@idActividad", idActividad);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+            apuntado = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+
+            return apuntado;
+        }
+
+        public void usuarioApuntarse(int idActividad, int idUsuario, DateTime fecha)
+        {
+
+            string query = "Insert into AccedeActividad " +
+                "values(@idActividad,@idUsuario,@fecha)";
+
+            SqlCommand cmd = new SqlCommand(query, cnx.Conexion);
+            cmd.Parameters.AddWithValue("@idActividad", idActividad);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            cmd.Parameters.AddWithValue("@fecha", fecha);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+
     }
 }
