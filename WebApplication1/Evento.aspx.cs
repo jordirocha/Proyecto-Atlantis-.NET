@@ -48,7 +48,7 @@ namespace WebApplication1
                         int puntos = Int32.Parse((((sender as LinkButton).NamingContainer as RepeaterItem).FindControl("lbPuntosCantidad") as Label).Text);
                         DALUsuario userPuntos = new DALUsuario();
                         int pnts = userPuntos.MostrarPuntosUsuario(int.Parse(Session["id"].ToString()));
-                        if (pnts > puntos)
+                        if (pnts >= puntos)
                         {
                             ev.usuarioApuntarse(idEvento, idUsuario, DateTime.Now);
                             lbRegistrado.Visible = true;
